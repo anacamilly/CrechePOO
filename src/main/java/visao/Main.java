@@ -406,7 +406,47 @@ public class Main {
                         digitoCuidador = teclado.nextInt();
                         teclado.nextLine();
 
-                    }while(digitoCuidador != 6);
+                        switch(digitoCuidador) {
+                            case 1:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                 CADASTRO DE CUIDADOR                   |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O NOME DO CUIDADOR:                             |");
+                                System.out.println("|--------------------------------------------------------|");
+                                cuidador.setNome(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CPF DO CUIDADOR:                              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                cuidador.setCpf(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O SEXO DO CUIDADOR:                             |");
+                                System.out.println("|--------------------------------------------------------|");
+                                cuidador.setSexo(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE A DATA DE NASCIMENTO DO CUIDADOR:               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                cuidador.setDataNascimento(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O VALOR DO SALARIO DO CUIDADOR:                 |");
+                                System.out.println("|--------------------------------------------------------|");
+                                cuidador.setSalario(teclado.nextFloat());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O TELEFONE DO CUIDADOR:                         |");
+                                System.out.println("|--------------------------------------------------------|");
+                                teclado.nextLine();
+                                cuidador.setTelefone(teclado.nextLine());
+
+
+                                cuidadorDao.insert(cuidador);
+
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
+                                System.out.println("|--------------------------------------------------------|");
+
+                                break;
+                        }
+
+                        }while(digitoCuidador != 6);
 
                     break;
 
