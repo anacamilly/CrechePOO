@@ -1,6 +1,7 @@
 package visao;
 
 import dominio.Crianca;
+import dominio.Cuidador;
 import persistencia.CriancaDao;
 import persistencia.CuidadorDao;
 
@@ -384,10 +385,31 @@ public class Main {
                         }
                     }while(digitoAluno != 6);
 
+                    break;
+
+                case 2:
+                    int digitoCuidador;
+                    Cuidador cuidador = new Cuidador();
+                    do {
+                        teclado.nextLine();
+                        System.out.println("\n|--------------------------------------------------------|\n"
+                                + "|                     MENU DE CUIDADOR                   |\n"
+                                + "|--------------------------------------------------------|\n"
+                                + "| 1 - CADASTRAR                                          |\n"
+                                + "| 2 - ALTERAR                                            |\n"
+                                + "| 3 - BUSCAR                                             |\n"
+                                + "| 4 - REMOVER                                            |\n"
+                                + "| 5 - LISTAR                                             |\n"
+                                + "| 6 - SAIR DO MENU DE CUIDADOR                           |\n"
+                                + "|--------------------------------------------------------|\n");
+
+                        digitoCuidador = teclado.nextInt();
+                        teclado.nextLine();
+
+                    }while(digitoCuidador != 6);
 
                     break;
-                case 2:
-                    break;
+
                 case 3:
                     break;
                 case 4:
