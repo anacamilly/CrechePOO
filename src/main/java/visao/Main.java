@@ -2,9 +2,11 @@ package visao;
 
 import dominio.Crianca;
 import dominio.Cuidador;
+import dominio.Responsavel;
 import dominio.Turma;
 import persistencia.CriancaDao;
 import persistencia.CuidadorDao;
+import persistencia.ResponsavelDao;
 import persistencia.TurmaDao;
 
 import java.util.List;
@@ -15,9 +17,12 @@ public class Main {
     static Crianca crian = new Crianca();
     static Cuidador cuidador = new Cuidador();
     static Turma turma = new Turma();
+    static Responsavel responsavel = new Responsavel();
     static CriancaDao crianDao = new CriancaDao();
     static CuidadorDao cuidadorDao= new CuidadorDao();
     static TurmaDao turmaDao= new TurmaDao();
+    static ResponsavelDao responsDao = new ResponsavelDao();
+
 
     public static void main(String[] args) {
         int digito;
@@ -1131,7 +1136,41 @@ public class Main {
                         digitoRespon = teclado.nextInt();
                         teclado.nextLine();
 
-                    }while (digitoRespon != 6);
+                        switch (digitoRespon) {
+                            case 1:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                CADASTRO DE RESPONSÁVEL                 |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O NOME DO RESPONSÁVEL:                          |");
+                                System.out.println("|--------------------------------------------------------|");
+                                responsavel.setNome(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CPF DO RESPONSÁVEL:                           |");
+                                System.out.println("|--------------------------------------------------------|");
+                                responsavel.setCpf(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O SEXO DO RESPONSÁVEL:                          |");
+                                System.out.println("|--------------------------------------------------------|");
+                                responsavel.setSexo(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE A DATA DE NASCIMENTO DO RESPONSÁVEL:            |");
+                                System.out.println("|--------------------------------------------------------|");
+                                responsavel.setDataNascimento(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O TELEFONE DO RESPONSÁVEL:                      |");
+                                System.out.println("|--------------------------------------------------------|");
+                                responsavel.setTelefone(teclado.nextLine());
+
+                                responsDao.insert(responsavel);
+
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                break;
+
+                        }
+
+                        }while (digitoRespon != 6);
 
                     break;
 
