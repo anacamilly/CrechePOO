@@ -288,8 +288,33 @@ public class Main {
                                 }
                                 break;
                             case 3:
-                                break;
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                     BUSCA DE CRIANÇA                   |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DA CRIANÇA:                                |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int id_busca = teclado.nextInt();
+                                teclado.nextLine();
 
+                                var crn = crianDao.buscar(id_busca);
+
+
+                                if(crn != null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ID: " + crn.getId());
+                                    System.out.println("| NOME: " + crn.getNome());
+                                    System.out.println("| CPF: " + crn.getCpf());
+                                    System.out.println("| SEXO: " + crn.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + crn.getDataNascimento());
+                                    System.out.println("| MATRÍCULA: " + crn.getMatricula());
+                                    System.out.println("|--------------------------------------------------------|");
+                                }else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO ENCONTRADO                        |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
                             case 4:
                                 break;
                         }
