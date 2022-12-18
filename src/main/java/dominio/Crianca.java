@@ -12,10 +12,10 @@ public class Crianca {
 
     }
 
-    public Crianca (int id, String cpf, String nome, String sexo, String dataNascimento, int matricula) {
+    public Crianca (int id, String nome, String cpf, String sexo, String dataNascimento, int matricula) {
         this.id = id;
-        this.cpf = cpf;
         this.nome = nome;
+        this.cpf = cpf;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
         this.matricula = matricula;
