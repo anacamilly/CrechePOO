@@ -41,7 +41,7 @@ public class Main {
                     + "| 2 - CUIDADOR                                           |\n"
                     + "| 3 - TURMA                                              |\n"
                     + "| 4 - RESPONSÁVEL                                        |\n"
-                    + "| 5 - EXTRA-CURRICULAR                                   |\n"
+                    + "| 5 - EXTRACURRICULAR                                    |\n"
                     + "| 6 - SAIR DO SISTEMA                                    |\n"
                     + "|--------------------------------------------------------|\n");
 
@@ -1485,6 +1485,27 @@ public class Main {
                     break;
 
                 case 5:
+                    int digitoExCurricular;
+                    do {
+                        teclado.nextLine();
+                        System.out.println("\n|--------------------------------------------------------|\n"
+                                + "|                  MENU DE EXTRACURRICULAR               |\n"
+                                + "|--------------------------------------------------------|\n"
+                                + "| 1 - CADASTRAR                                          |\n"
+                                + "| 2 - ALTERAR                                            |\n"
+                                + "| 3 - BUSCAR                                             |\n"
+                                + "| 4 - REMOVER                                            |\n"
+                                + "| 5 - LISTAR                                             |\n"
+                                + "| 6 - SAIR DO MENU DE EXTRACURRICULAR                    |\n"
+                                + "|--------------------------------------------------------|\n");
+
+                        digitoExCurricular = teclado.nextInt();
+
+                        switch (digitoExCurricular){
+                            case 1:
+                                break;
+                        }
+                    }while (digitoExCurricular != 6);
                     break;
 
                 case 6:
