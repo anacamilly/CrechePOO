@@ -1,18 +1,15 @@
 package persistencia;
 
-import java.beans.Statement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
-import persistencia.Conexao;
+import java.util.List;
 
 import dominio.Crianca;
 
 public class CriancaDao {
 
     private Conexao minhaConexao;
-    private final String RELATORIO = "select * from \"crianca\"";
+    private final String LISTAR = "select * from crianca";
     private final String BUSCAR = "select * from crianca where id=?";
     private final String INCLUIR = "insert into crianca (nome, cpf, sexo, nascimento, matricula) values (?, ?, ?, ?, ?)";
     private final String EXCLUIR = "delete from crianca where id=?";
@@ -24,26 +21,29 @@ public class CriancaDao {
         minhaConexao = new Conexao();
     }
 
-    public ArrayList<Crianca> relatorio(){
-        ArrayList<Crianca> lista = new ArrayList<>();
-        try{
+
+    public List<Crianca> listar() {
+        List<Crianca> criancas = new ArrayList<>();
+
+        try {
             minhaConexao.conectar();
             Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
-            ResultSet rs = ((java.sql.Statement) instrucao).executeQuery(RELATORIO);
-
-
-            while(rs.next()){
-                Crianca crianca = new Crianca (rs.getInt("id"), rs.getString("nome"), rs.getString("cpf"),
-                        rs.getString("sexo"), rs.getString("nascimento"), rs.getInt("matricula"));
-
-
-                lista.add(crianca);
+            ResultSet resultSet =((java.sql.Statement) instrucao).executeQuery(LISTAR);
+            while (resultSet.next()) {
+                Crianca crianc = new Crianca(resultSet.getInt("id"), resultSet.getString("nome"),
+                resultSet.getString("cpf"),
+                resultSet.getString("sexo"),
+                resultSet.getString("nascimento"),
+                resultSet.getInt("matricula"));
+                criancas.add(crianc);
             }
-            minhaConexao.desconectar();
-        }catch(SQLException e){
-            System.out.println("Erro no relatorio: "+e.getMessage());
+
+        } catch (SQLException e) {
+            System.out.println("Erro na lista: "+e.getMessage());
         }
-        return lista;
+
+        return criancas;
+
     }
 
     public void insert(Crianca crianca){
