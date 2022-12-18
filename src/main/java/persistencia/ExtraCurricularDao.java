@@ -14,9 +14,9 @@ public class ExtraCurricularDao{
     private Conexao minhaConexao;
     private final String LISTAR = "select * from extracurricular";
     private final String BUSCAR = "select * from extracurricular where codigo=?";
-    private final String INCLUIR = "insert into extracurricular (codigo, nome, modalidade) values (?, ?, ?)";
+    private final String INCLUIR = "insert into extracurricular (codigo, nome, modalidade, codigoTurma) values (?, ?, ?, ?)";
     private final String EXCLUIR = "delete from extracurricular where codigo=?";
-    private final String ALTERAR = "update extracurricular set codigo=?, nome=?, modalidade=? where codigo=?";
+    private final String ALTERAR = "update extracurricular set codigo=?, nome=?, modalidade=?, codigoTurma=? where codigo=?";
 
 
     public ExtraCurricularDao() {
@@ -31,7 +31,7 @@ public class ExtraCurricularDao{
             java.sql.Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
             ResultSet rs =((java.sql.Statement) instrucao).executeQuery(LISTAR);
             while(rs.next()){
-                ExtraCurricular extraCurricular = new ExtraCurricular (rs.getInt("codigo"), rs.getString("nome"), rs.getString("modalidade"));
+                ExtraCurricular extraCurricular = new ExtraCurricular (rs.getInt("codigo"), rs.getString("nome"), rs.getString("modalidade"), rs.getInt("codigoTurma"));
                 lista.add(extraCurricular);
             }
             minhaConexao.desconectar();
@@ -50,6 +50,7 @@ public class ExtraCurricularDao{
             instrucao.setInt(1, extc.getCod());
             instrucao.setString(2, extc.getNome());
             instrucao.setString(3, extc.getModalidade());
+            instrucao.setInt(4, extc.getCodTurma());
             instrucao.execute();
             minhaConexao.desconectar();
         }catch(Exception e){
@@ -65,7 +66,8 @@ public class ExtraCurricularDao{
             instrucao.setInt(1, extc.getCod());
             instrucao.setString(2, extc.getNome());
             instrucao.setString(3, extc.getModalidade());
-            instrucao.setInt(4, codigo);
+            instrucao.setInt(4, extc.getCodTurma());
+            instrucao.setInt(5, codigo);
             instrucao.execute();
             minhaConexao.desconectar();
         }catch(Exception e){
@@ -95,7 +97,7 @@ public class ExtraCurricularDao{
             instrucao.setInt(1, codigo);
             ResultSet rs = instrucao.executeQuery();
             if(rs.next()){
-                extraCurricular = new ExtraCurricular (rs.getInt("codigo"), rs.getString("nome"), rs.getString("modalidade"));
+                extraCurricular = new ExtraCurricular (rs.getInt("codigo"), rs.getString("nome"), rs.getString("modalidade"), rs.getInt("codigoTurma"));
             }
             minhaConexao.desconectar();
         }catch(SQLException e){
