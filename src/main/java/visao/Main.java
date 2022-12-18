@@ -1539,6 +1539,31 @@ public class Main {
                                 break;
 
                             case 2:
+                                break;
+
+                            case 3:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|           BUSCAR CADASTRO DE EXTRACURRICULAR           |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CÓDIGO DA EXTRACURRICULAR:                    |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idBuscaExtra = teclado.nextInt();
+                                teclado.nextLine();
+
+                                var buscaExtra = extraCurricularDao.buscar(idBuscaExtra);
+
+                                if (buscaExtra != null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| CÓDIGO: " + buscaExtra.getCod());
+                                    System.out.println("| NOME: " + buscaExtra.getNome());
+                                    System.out.println("| MODALIDADE: " + buscaExtra.getModalidade());
+                                    System.out.println("| CÓDIGO DA TURMA: " + buscaExtra.getCodTurma());
+                                    System.out.println("|--------------------------------------------------------|");
+                                } else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE CÓDIGO NÃO FOI ENCONTRADO                |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
 
                                 break;
                         }
