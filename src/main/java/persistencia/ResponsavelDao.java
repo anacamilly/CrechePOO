@@ -1,17 +1,18 @@
 package persistencia;
 
-import java.beans.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import dominio.Responsavel;
 
 public class ResponsavelDao {
 
     private Conexao minhaConexao;
-    private final String RELATORIO = "select * from responsavel";
+    private final String LISTAR = "select * from responsavel";
     private final String BUSCAR = "select * from responsavel where id=?";
     private final String INCLUIR = "insert into responsavel (nome, cpf, sexo, nascimento, telefone) values (?, ?, ?, ?, ?)";
     private final String EXCLUIR = "delete from responsavel where id=?";
@@ -23,12 +24,12 @@ public class ResponsavelDao {
         minhaConexao = new Conexao();
     }
 
-    public ArrayList<Responsavel> relatorio(){
-        ArrayList<Responsavel> lista = new ArrayList<>();
+    public List<Responsavel> listar(){
+        List<Responsavel> lista = new ArrayList<>();
         try{
             minhaConexao.conectar();
-            Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
-            ResultSet rs = ((java.sql.Statement) instrucao).executeQuery(RELATORIO);
+            java.sql.Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
+            ResultSet rs =((java.sql.Statement) instrucao).executeQuery(LISTAR);
             while(rs.next()){
                 Responsavel responsavel = new Responsavel (rs.getInt("id"), rs.getString("nome"), rs.getString("cpf"),
                         rs.getString("sexo"), rs.getString("nascimento"), rs.getString("telefone"));

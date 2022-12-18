@@ -84,18 +84,16 @@ public class CriancaDao {
         }
     }
 
-    public void remove(Crianca crianca){
-        try {
+    public void exclusao(int id){
+        try{
             minhaConexao.conectar();
             PreparedStatement instrucao =
                     minhaConexao.getConexao().prepareStatement(EXCLUIR);
-            instrucao.setInt(1,crianca.getId());
-
+            instrucao.setInt(1, id);
             instrucao.execute();
-            instrucao.close();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            minhaConexao.desconectar();
+        }catch(Exception e){
+            System.out.println("Erro na exclusão: "+e.getMessage());
         }
     }
 

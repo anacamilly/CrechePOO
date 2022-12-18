@@ -105,9 +105,9 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("| DIGITE O ID DA CRIANÇA QUE DESEJA ALTERAR:             |");
                                 System.out.println("|--------------------------------------------------------|");
-                                int id_alterar = teclado.nextInt();
+                                int idAlterarCrian = teclado.nextInt();
 
-                                var crianca_busca = crianDao.buscar(id_alterar);
+                                var crianca_busca = crianDao.buscar(idAlterarCrian);
 
                                 if (crianca_busca == null) {
                                     System.out.println("|--------------------------------------------------------|");
@@ -162,9 +162,9 @@ public class Main {
                                             int matriculacri = crianca_busca.getMatricula();
                                             crian.setMatricula(matriculacri);
 
-                                            crian.setId(id_alterar);
+                                            crian.setId(idAlterarCrian);
 
-                                            crianDao.alteracao(crian, id_alterar);
+                                            crianDao.alteracao(crian, idAlterarCrian);
 
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|                NOME ALTERADO COM SUCESSO               |");
@@ -194,9 +194,9 @@ public class Main {
                                             int matriculacri2 = crianca_busca.getMatricula();
                                             crian.setMatricula(matriculacri2);
 
-                                            crian.setId(id_alterar);
+                                            crian.setId(idAlterarCrian);
 
-                                            crianDao.alteracao(crian, id_alterar);
+                                            crianDao.alteracao(crian, idAlterarCrian);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|                 CPF ALTERADO COM SUCESSO               |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -225,9 +225,9 @@ public class Main {
                                             int matriculacri3 = crianca_busca.getMatricula();
                                             crian.setMatricula(matriculacri3);
 
-                                            crian.setId(id_alterar);
+                                            crian.setId(idAlterarCrian);
 
-                                            crianDao.alteracao(crian, id_alterar);
+                                            crianDao.alteracao(crian, idAlterarCrian);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|                SEXO ALTERADO COM SUCESSO               |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -256,9 +256,9 @@ public class Main {
                                             int matriculacri4 = crianca_busca.getMatricula();
                                             crian.setMatricula(matriculacri4);
 
-                                            crian.setId(id_alterar);
+                                            crian.setId(idAlterarCrian);
 
-                                            crianDao.alteracao(crian, id_alterar);
+                                            crianDao.alteracao(crian, idAlterarCrian);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|        DATA DE NASCIMENTO ALTERADA COM SUCESSO         |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -288,9 +288,9 @@ public class Main {
                                             String nascimentocri5 = crianca_busca.getDataNascimento();
                                             crian.setDataNascimento(nascimentocri5);
 
-                                            crian.setId(id_alterar);
+                                            crian.setId(idAlterarCrian);
 
-                                            crianDao.alteracao(crian, id_alterar);
+                                            crianDao.alteracao(crian, idAlterarCrian);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|             MATRÍCULA ALTERADA COM SUCESSO             |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -313,10 +313,10 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("| DIGITE O ID DA CRIANÇA:                                |");
                                 System.out.println("|--------------------------------------------------------|");
-                                int id_busca = teclado.nextInt();
+                                int idBuscaCrian = teclado.nextInt();
                                 teclado.nextLine();
 
-                                var crn = crianDao.buscar(id_busca);
+                                var crn = crianDao.buscar(idBuscaCrian);
 
 
                                 if (crn != null) {
@@ -342,11 +342,10 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("| DIGITE O ID DA CRIANÇA:                                |");
                                 System.out.println("|--------------------------------------------------------|");
-                                var id_excluir = teclado.nextInt();
-                                Crianca crianca = new Crianca();
-                                crianca.setId(id_excluir);
+                                var idExcluirCrian = teclado.nextInt();
+                                crian.setId(idExcluirCrian);
 
-                                var verificaExc = crianDao.buscar(id_excluir);
+                                var verificaExc = crianDao.buscar(idExcluirCrian);
 
                                 if (verificaExc != null) {
                                     teclado.nextLine();
@@ -365,14 +364,14 @@ public class Main {
                                     var respEx = teclado.nextLine();
 
                                     switch (respEx) {
-                                        case "S":
-                                            crianDao.remove(crianca);
+                                        case "S", "s":
+                                            crianDao.exclusao(idExcluirCrian);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|             CADASTRO EXCLUÍDO COM SUCESSO              |");
                                             System.out.println("|--------------------------------------------------------|");
 
                                             break;
-                                        case "N":
+                                        case "N", "n":
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|       O CADASTRO NÃO SERÁ EXCLUÍDO - VOTE AO MENU      |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -1134,7 +1133,6 @@ public class Main {
                                 + "|--------------------------------------------------------|\n");
 
                         digitoRespon = teclado.nextInt();
-                        teclado.nextLine();
 
                         switch (digitoRespon) {
                             case 1:
@@ -1455,8 +1453,33 @@ public class Main {
                                 }
                                 break;
 
-                        }
+                            case 5:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                  LISTA DE RESPONSÁVEIS                 |");
+                                System.out.println("|--------------------------------------------------------|");
 
+                                for (Responsavel responList : responsDao.listar()) {
+                                    System.out.println("| ID: " + responList.getId());
+                                    System.out.println("| NOME: " + responList.getNome());
+                                    System.out.println("| CPF: " + responList.getCpf());
+                                    System.out.println("| SEXO: " + responList.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + responList.getDataNascimento());
+                                    System.out.println("| TELEFONE: " + responList.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
+                            case 6:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|              SAIR DO MENU DE RESPONSÁVEL               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                break;
+
+                            default:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                System.out.println("|--------------------------------------------------------|");
+                        }
                         }while (digitoRespon != 6);
 
                     break;
