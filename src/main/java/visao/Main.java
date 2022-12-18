@@ -289,6 +289,13 @@ public class Main {
                                             System.out.println("|--------------------------------------------------------|");
 
                                             break;
+
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+
                                     }
                                 }
                                 break;
@@ -702,6 +709,13 @@ public class Main {
                                             System.out.println("|--------------------------------------------------------|");
 
                                             break;
+
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+
                                     }
                                 }
 
