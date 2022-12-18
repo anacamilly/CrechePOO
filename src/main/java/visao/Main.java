@@ -86,6 +86,210 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
                                 break;
                             case 2:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|            ALTERAÇÃO DE CADASTRO DA CRIANÇA            |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DA CRIANÇA QUE DESEJA ALTERAR:             |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int id_alterar = teclado.nextInt();
+
+                                var crianca_busca = crianDao.buscar(id_alterar);
+
+                                if(crianca_busca == null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+                                else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|       INFORMAÇÕES RELACIONADAS AO ID ESCOLHIDO         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| NOME:" + crianca_busca.getNome());
+                                    System.out.println("| CPF: " + crianca_busca.getCpf());
+                                    System.out.println("| SEXO:" + crianca_busca.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO:" + crianca_busca.getDataNascimento());
+                                    System.out.println("| MATRÍCULA:" + crianca_busca.getMatricula());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| O QUE PRECISA SER ALTERADO?                            |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| 1 - NOME                                               |");
+                                    System.out.println("| 2 - CPF                                                |");
+                                    System.out.println("| 3 - SEXO                                               |");
+                                    System.out.println("| 4 - DATA DE NASCIMENTO                                 |");
+                                    System.out.println("| 5 - MATRÍCULA                                          |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE A OPÇÃO DESEJADA:                               |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var opc = teclado.nextInt();
+
+                                    teclado.nextLine();
+                                    Crianca crianAlt = new Crianca();
+
+
+                                    switch (opc) {
+                                        case 1:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE NOME                   |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O NOME DA CRIANÇA:" + crianca_busca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO NOME DA CRIANÇA:                         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String nomeAlterado = teclado.nextLine();
+                                            crianAlt.setNome(nomeAlterado);
+
+                                            String cpfcri = crianca_busca.getCpf();
+                                            crianAlt.setCpf(cpfcri);
+
+                                            String sexocri = crianca_busca.getSexo();
+                                            crianAlt.setSexo(sexocri);
+
+                                            String nascimentocri = crianca_busca.getDataNascimento();
+                                            crianAlt.setDataNascimento(nascimentocri);
+
+                                            int matriculacri = crianca_busca.getMatricula();
+                                            crianAlt.setMatricula(matriculacri);
+
+                                            crianAlt.setId(id_alterar);
+
+                                            crianDao.alteracao(crianAlt, id_alterar);
+
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                NOME ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 2:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE CPF                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O CPF DA CRIANÇA: " + crianca_busca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO CPF DA CRIANÇA:                          |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String cpfAlterado = teclado.nextLine();
+                                            crianAlt.setCpf(cpfAlterado);
+
+                                            String nomecri = crianca_busca.getNome();
+                                            crianAlt.setNome(nomecri);
+
+                                            String sexocri2 = crianca_busca.getSexo();
+                                            crianAlt.setSexo(sexocri2);
+
+                                            String nascimentocri2 = crianca_busca.getDataNascimento();
+                                            crianAlt.setDataNascimento(nascimentocri2);
+
+                                            int matriculacri2 = crianca_busca.getMatricula();
+                                            crianAlt.setMatricula(matriculacri2);
+
+                                            crianAlt.setId(id_alterar);
+
+                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                 CPF ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 3:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                   ALTERAÇÃO DE SEXO                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O SEXO DA CRIANÇA: " + crianca_busca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO SEXO DA CRIANÇA:                         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String sexoAlterado = teclado.nextLine();
+                                            crianAlt.setSexo(sexoAlterado);
+
+                                            String nomecri3 = crianca_busca.getNome();
+                                            crianAlt.setNome(nomecri3);
+
+                                            String cpfcri3 = crianca_busca.getCpf();
+                                            crianAlt.setCpf(cpfcri3);
+
+                                            String nascimentocri3 = crianca_busca.getDataNascimento();
+                                            crianAlt.setDataNascimento(nascimentocri3);
+
+                                            int matriculacri3 = crianca_busca.getMatricula();
+                                            crianAlt.setMatricula(matriculacri3);
+
+                                            crianAlt.setId(id_alterar);
+
+                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                SEXO ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 4:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|            ALTERAÇÃO DA DATA DE NASCIMENTO             |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO A DATA DE NASCIMENTO DA CRIANÇA: " + crianca_busca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE A DATA DE NASCIMENTO DA CRIANÇA:                |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String dataAlterada = teclado.nextLine();
+                                            crianAlt.setDataNascimento(dataAlterada);
+
+                                            String nomecri4 = crianca_busca.getNome();
+                                            crianAlt.setNome(nomecri4);
+
+                                            String cpfcri4 = crianca_busca.getCpf();
+                                            crianAlt.setCpf(cpfcri4);
+
+                                            String sexocri4 = crianca_busca.getSexo();
+                                            crianAlt.setSexo(sexocri4);
+
+                                            int matriculacri4 = crianca_busca.getMatricula();
+                                            crianAlt.setMatricula(matriculacri4);
+
+                                            crianAlt.setId(id_alterar);
+
+                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|        DATA DE NASCIMENTO ALTERADA COM SUCESSO         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 5:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                ALTERAÇÃO DE MATRÍCULA                  |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO A MATRÍCULA DA CRIANÇA: " + crianca_busca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE A NOVA MATRÍCULA DA CRIANÇA:                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            int matriculaAlterada = teclado.nextInt();
+                                            crianAlt.setMatricula(matriculaAlterada);
+
+                                            String nomecri5 = crianca_busca.getNome();
+                                            crianAlt.setNome(nomecri5);
+
+                                            String cpfcri5 = crianca_busca.getCpf();
+                                            crianAlt.setCpf(cpfcri5);
+
+                                            String sexocri5 = crianca_busca.getSexo();
+                                            crianAlt.setSexo(sexocri5);
+
+                                            String nascimentocri5 = crianca_busca.getDataNascimento();
+                                            crianAlt.setDataNascimento(nascimentocri5);
+
+                                            crianAlt.setId(id_alterar);
+
+                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             MATRÍCULA ALTERADA COM SUCESSO             |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+                                    }
+                                }
+                                break;
+                            case 3:
+                                break;
+
+                            case 4:
                                 break;
                         }
                     }while(digitoAluno != 6);
