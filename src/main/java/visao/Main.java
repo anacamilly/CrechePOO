@@ -7,6 +7,7 @@ import persistencia.CriancaDao;
 import persistencia.CuidadorDao;
 import persistencia.TurmaDao;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -381,6 +382,20 @@ public class Main {
                                 break;
 
                             case 5:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                    LISTA DE CRIANÇAS                   |");
+                                System.out.println("|--------------------------------------------------------|");
+
+                                for (Crianca crianList : crianDao.listar()) {
+                                    System.out.println("| ID: " + crianList.getId());
+                                    System.out.println("| NOME: " + crianList.getNome());
+                                    System.out.println("| CPF: " + crianList.getCpf());
+                                    System.out.println("| SEXO: " + crianList.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + crianList.getDataNascimento());
+                                    System.out.println("| MATRÍCULA: " + crianList.getMatricula());
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
                                 break;
 
                             case 6:
