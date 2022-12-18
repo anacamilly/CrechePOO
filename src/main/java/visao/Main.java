@@ -1641,9 +1641,6 @@ public class Main {
                                             String modalidadeext3 = teclado.nextLine();
                                             extraCurricular.setModalidade(modalidadeext3);
 
-                                            //int codigoext3 = extraCBusca.getCod();
-                                            //extraCurricular.setCod(codigoext3);
-
                                             String nomeext3 = extraCBusca.getNome();
                                             extraCurricular.setNome(nomeext3);
 
@@ -1670,23 +1667,27 @@ public class Main {
                                             int codigoTurmAlteradoE = teclado.nextInt();
                                             extraCurricular.setCodTurma(codigoTurmAlteradoE);
 
-                                            int codext4 = extraCBusca.getCod();
-                                            extraCurricular.setCod(codext4);
+                                            var verificaCodTur = turmaDao.buscar(codigoTurmAlteradoE);
 
-                                            String nomeext4 = extraCBusca.getNome();
-                                            extraCurricular.setNome(nomeext4);
+                                            if(verificaCodTur == null){
+                                                System.out.println("|--------------------------------------------------------|");
+                                                System.out.println("|    NÃO EXISTE TURMA COM ESSE CÓDIGO, TENTE NOVAMENTE   |");
+                                                System.out.println("|--------------------------------------------------------|");
+                                            }else {
+                                                String nomeext4 = extraCBusca.getNome();
+                                                extraCurricular.setNome(nomeext4);
 
-                                            String modalidadeext4 = extraCBusca.getModalidade();
-                                            extraCurricular.setModalidade(modalidadeext4);
+                                                String modalidadeext4 = extraCBusca.getModalidade();
+                                                extraCurricular.setModalidade(modalidadeext4);
 
-                                            extraCurricular.setCod(idAlterarExtra);
+                                                extraCurricular.setCod(idAlterarExtra);
 
-                                            extraCurricularDao.alteracao(extraCurricular, idAlterarExtra);
-                                            System.out.println("|--------------------------------------------------------|");
-                                            System.out.println("|               CÓDIGO ALTERADO COM SUCESSO              |");
-                                            System.out.println("|--------------------------------------------------------|");
+                                                extraCurricularDao.alteracao(extraCurricular, idAlterarExtra);
+                                                System.out.println("|--------------------------------------------------------|");
+                                                System.out.println("|          CÓDIGO DA TURMA ALTERADO COM SUCESSO          |");
+                                                System.out.println("|--------------------------------------------------------|");
+                                            }
                                             break;
-
                                     }
                                 }
                                 break;
