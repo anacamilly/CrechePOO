@@ -1406,6 +1406,55 @@ public class Main {
 
                                 break;
 
+                            case 4:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|         EXCLUSÃO DE CADASTRO DE RESPONSÁVEL            |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DO RESPONSÁVEL:                            |");
+                                System.out.println("|--------------------------------------------------------|");
+                                var idExcluirResp = teclado.nextInt();
+                                responsavel.setId(idExcluirResp);
+
+                                var verificaExcResp = responsDao.buscar(idExcluirResp);
+
+                                if (verificaExcResp != null) {
+                                    teclado.nextLine();
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|       CADASTRO DO RESPONSÁVEL QUE SERÁ EXCLUÍDO:       |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ID: " + verificaExcResp.getId());
+                                    System.out.println("| NOME: " + verificaExcResp.getNome());
+                                    System.out.println("| CPF: " + verificaExcResp.getCpf());
+                                    System.out.println("| SEXO: " + verificaExcResp.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + verificaExcResp.getDataNascimento());
+                                    System.out.println("| TELEFONE: " + verificaExcResp.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: DESEJA EXCLUIR ESSE CADASTRO? DIGITE: S ou N  |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var respEx = teclado.nextLine();
+
+                                    switch (respEx) {
+                                        case "S", "s":
+                                            responsDao.exclusao(idExcluirResp);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             CADASTRO EXCLUÍDO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+                                        case "N", "n":
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|       O CADASTRO NÃO SERÁ EXCLUÍDO - VOTE AO MENU      |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                    }
+
+                                }
+                                break;
+
                         }
 
                         }while (digitoRespon != 6);

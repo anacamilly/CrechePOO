@@ -14,7 +14,7 @@ public class ResponsavelDao {
     private final String RELATORIO = "select * from responsavel";
     private final String BUSCAR = "select * from responsavel where id=?";
     private final String INCLUIR = "insert into responsavel (nome, cpf, sexo, nascimento, telefone) values (?, ?, ?, ?, ?)";
-    private final String EXCLUIR = "delete from \"responsavel\" where \"id\"=?";
+    private final String EXCLUIR = "delete from responsavel where id=?";
     private final String ALTERAR = "update responsavel set nome=?, cpf=?, sexo=?, "
             + "nascimento=?, telefone=? where id=?";
 
