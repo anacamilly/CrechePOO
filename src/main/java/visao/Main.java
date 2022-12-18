@@ -85,6 +85,7 @@ public class Main {
                                 System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
                                 System.out.println("|--------------------------------------------------------|");
                                 break;
+
                             case 2:
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("|            ALTERAÇÃO DE CADASTRO DA CRIANÇA            |");
@@ -99,8 +100,7 @@ public class Main {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
                                     System.out.println("|--------------------------------------------------------|");
-                                }
-                                else {
+                                } else {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("|       INFORMAÇÕES RELACIONADAS AO ID ESCOLHIDO         |");
                                     System.out.println("|--------------------------------------------------------|");
@@ -287,6 +287,7 @@ public class Main {
                                     }
                                 }
                                 break;
+
                             case 3:
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("|                     BUSCA DE CRIANÇA                   |");
@@ -364,8 +365,22 @@ public class Main {
                                     }
 
                                 }
-
                                 break;
+
+                            case 5:
+                                break;
+
+                            case 6:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                SAIR DO MENU DE CRIANÇA                 |");
+                                System.out.println("|--------------------------------------------------------|");
+                                break;
+
+                            default:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                System.out.println("|--------------------------------------------------------|");
+
                         }
                     }while(digitoAluno != 6);
 
