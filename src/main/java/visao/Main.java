@@ -5,6 +5,7 @@ import dominio.Cuidador;
 import dominio.Turma;
 import persistencia.CriancaDao;
 import persistencia.CuidadorDao;
+import persistencia.TurmaDao;
 
 import java.util.Scanner;
 
@@ -12,9 +13,10 @@ public class Main {
 
     static Crianca crian = new Crianca();
     static Cuidador cuidador = new Cuidador();
-    Turma turma = new Turma();
+    static Turma turma = new Turma();
     static CriancaDao crianDao = new CriancaDao();
     static CuidadorDao cuidadorDao= new CuidadorDao();
+    static TurmaDao turmaDao= new TurmaDao();
 
     public static void main(String[] args) {
         int digito;
@@ -805,9 +807,161 @@ public class Main {
                                 + "|--------------------------------------------------------|\n");
 
                         digitoTurma = teclado.nextInt();
-                        teclado.nextLine();
 
-                    }while(digitoTurma != 6);
+                        switch(digitoTurma) {
+                            case 1:
+                                teclado.nextLine();
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                   CADASTRO DA TURMA                    |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CÓDIGO DA TURMA:                              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                turma.setCodigo(teclado.nextInt());
+                                teclado.nextLine();
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O NOME DA TURMA:                                |");
+                                System.out.println("|--------------------------------------------------------|");
+                                turma.setNome(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE A QUANTIDADE DE PARTICIPANTES DA TURMA:         |");
+                                System.out.println("|--------------------------------------------------------|");
+                                turma.setQuantidadeAlunos(teclado.nextInt());
+                                System.out.println("|--------------------------------------------------------|");
+
+                                teclado.nextLine();
+
+                                turmaDao.insert(turma);
+
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                break;
+
+                            case 2:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             ALTERAÇÃO DE CADASTRO DA TURMA             |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CÓDIGO DA TURMA QUE DESEJA ALTERAR:           |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idAlterarTurma = teclado.nextInt();
+
+                                var turmaBusca = turmaDao.buscar(idAlterarTurma);
+
+                                if(turmaBusca == null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                } else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|       INFORMAÇÕES RELACIONADAS AO ID ESCOLHIDO         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| CÓDIGO:" + turmaBusca.getCodigo());
+                                    System.out.println("| NOME: " + turmaBusca.getNome());
+                                    System.out.println("| QUANTIDADE DE PARTICIPANTES:" + turmaBusca.getQuantidadeAlunos());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| O QUE PRECISA SER ALTERADO?                            |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| 1 - CÓDIGO                                             |");
+                                    System.out.println("| 2 - NOME                                               |");
+                                    System.out.println("| 3 - QUANTIDADE DE PARTICIPANTES                        |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE A OPÇÃO DESEJADA:                               |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var opc3 = teclado.nextInt();
+
+                                    teclado.nextLine();
+
+
+                                    switch (opc3) {
+                                        case 1:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                 ALTERAÇÃO DE CÓDIGO                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O CÓDIGO DA TURMA: " + turmaBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO CÓDIGO DA TURMA:                         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            int codigoAlterado = teclado.nextInt();
+                                            turma.setCodigo(codigoAlterado);
+
+                                            String nometurma = turmaBusca.getNome();
+                                            crian.setNome(nometurma);
+
+                                            int quantAlunostur = turmaBusca.getQuantidadeAlunos();
+                                            turma.setQuantidadeAlunos(quantAlunostur);
+
+                                            turma.setCodigo(idAlterarTurma);
+
+                                            crianDao.alteracao(crian, idAlterarTurma);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|               CÓDIGO ALTERADO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 2:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE NOME                   |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O NOME DA TURMA:" + turmaBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO NOME DA TURMA:                           |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String nomeAlterado = teclado.nextLine();
+                                            turma.setNome(nomeAlterado);
+
+                                            int codigotur2 = turmaBusca.getCodigo();
+                                            turma.setCodigo(codigotur2);
+
+                                            int quantAlunostur2 = turmaBusca.getQuantidadeAlunos();
+                                            turma.setQuantidadeAlunos(quantAlunostur2);
+
+                                            turma.setCodigo(idAlterarTurma);
+
+                                            turmaDao.alteracao(turma, idAlterarTurma);
+
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                NOME ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 3:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|       ALTERAÇÃO DE QUANTIDADE DE PARTICIPANTES         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO A QUANTIADADE DA TURMA: " + turmaBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE A NOVA QUANTIDADE DA TURMA:                     |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            int qntAlterada = teclado.nextInt();
+                                            turma.setQuantidadeAlunos(qntAlterada);
+
+                                            int codigotur3 = turmaBusca.getCodigo();
+                                            turma.setCodigo(codigotur3);
+
+                                            String nometurma3 = turmaBusca.getNome();
+                                            crian.setNome(nometurma3);
+
+                                            turma.setCodigo(idAlterarTurma);
+
+                                            turmaDao.alteracao(turma, idAlterarTurma);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             QUANTIDADE ALTERADA COM SUCESSO            |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                    }
+                                }
+                                break;
+
+                        }
+
+                        }while(digitoTurma != 6);
 
                         break;
                 case 4:
