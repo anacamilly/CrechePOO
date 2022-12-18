@@ -1,5 +1,6 @@
 package visao;
 
+import dominio.Crianca;
 import persistencia.CriancaDao;
 import persistencia.CuidadorDao;
 
@@ -33,6 +34,26 @@ public class Main {
             digito = teclado.nextInt();
             switch(digito) {
                 case 1:
+                    int digitoAluno;
+                    Crianca crian = new Crianca();
+                    do {
+                        teclado.nextLine();
+                        System.out.println("\n|--------------------------------------------------------|\n"
+                                + "|                      MENU DA CRIANÇA                   |\n"
+                                + "|--------------------------------------------------------|\n"
+                                + "| 1 - CADASTRAR                                          |\n"
+                                + "| 2 - ALTERAR                                            |\n"
+                                + "| 3 - BUSCAR                                             |\n"
+                                + "| 4 - REMOVER                                            |\n"
+                                + "| 5 - LISTAR                                             |\n"
+                                + "| 6 - SAIR DO MENU DA CRIANÇA                            |\n"
+                                + "|--------------------------------------------------------|\n");
+
+                        digitoAluno = teclado.nextInt();
+                        teclado.nextLine();
+
+                    }while(digitoAluno != 6);
+
                     break;
                 case 2:
                     break;
@@ -44,6 +65,7 @@ public class Main {
                     break;
             }
 
-        }while(digito != 5);
+                    break;
+            }while(digito != 5);
     }
 }
