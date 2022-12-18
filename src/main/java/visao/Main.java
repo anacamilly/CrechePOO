@@ -34,8 +34,9 @@ public class Main {
                     + "| 1 - CRIANÇA                                            |\n"
                     + "| 2 - CUIDADOR                                           |\n"
                     + "| 3 - TURMA                                              |\n"
-                    + "| 4 - EXTRA-CURRICULAR                                   |\n"
-                    + "| 5 - SAIR DO SISTEMA                                    |\n"
+                    + "| 4 - RESPONSÁVEL                                        |\n"
+                    + "| 5 - EXTRA-CURRICULAR                                   |\n"
+                    + "| 6 - SAIR DO SISTEMA                                    |\n"
                     + "|--------------------------------------------------------|\n");
 
             digito = teclado.nextInt();
@@ -1065,10 +1066,12 @@ public class Main {
                     break;
 
                 case 5:
+                    break;
+
+                case 6:
                     System.out.println("|--------------------------------------------------------|");
                     System.out.println("|                   SAINDO DO SISTEMA                    |");
                     System.out.println("|--------------------------------------------------------|");
-
                     break;
 
                 default:
@@ -1079,6 +1082,6 @@ public class Main {
             }
 
                     break;
-            }while(digito != 5);
+            }while(digito != 6);
     }
 }
