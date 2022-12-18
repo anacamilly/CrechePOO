@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static CriancaDao crianDao= new CriancaDao();
+    static CriancaDao crianDao = new CriancaDao();
     static CuidadorDao cuidadorDao= new CuidadorDao();
 
     public static void main(String[] args) {
@@ -79,6 +79,11 @@ public class Main {
 
                                 teclado.nextLine();
 
+                                crianDao.insert(crian);
+
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
+                                System.out.println("|--------------------------------------------------------|");
                                 break;
                             case 2:
                                 break;
