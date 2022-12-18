@@ -9,6 +9,12 @@ public class Responsavel {
     private String telefone;
 
     public Responsavel(int id, String nome, String cpf, String sexo, String nascimento, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.sexo = sexo;
+        this.dataNascimento = nascimento;
+        this.telefone = telefone;
     }
 
     public Responsavel() {

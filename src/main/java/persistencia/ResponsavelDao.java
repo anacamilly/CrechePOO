@@ -11,12 +11,12 @@ import dominio.Responsavel;
 public class ResponsavelDao {
 
     private Conexao minhaConexao;
-    private final String RELATORIO = "select * from \"responsavel\"";
-    private final String BUSCAR = "select * from \"responsavel\" where \"id\"=?";
+    private final String RELATORIO = "select * from responsavel";
+    private final String BUSCAR = "select * from responsavel where id=?";
     private final String INCLUIR = "insert into responsavel (nome, cpf, sexo, nascimento, telefone) values (?, ?, ?, ?, ?)";
     private final String EXCLUIR = "delete from \"responsavel\" where \"id\"=?";
-    private final String ALTERAR = "update \"responsavel set \"nome\"=?, \"\"cpf\"=?, \"sexo\"=?, "
-            + "\"nascimento\"=?" + "\\\"telefone\\\"=? where \"id\"=?";
+    private final String ALTERAR = "update responsavel set nome=?, cpf=?, sexo=?, "
+            + "nascimento=?, telefone=? where id=?";
 
 
     public ResponsavelDao() {
@@ -67,8 +67,8 @@ public class ResponsavelDao {
             instrucao.setString(2, t.getCpf());
             instrucao.setString(3, t.getSexo());
             instrucao.setString(4, t.getDataNascimento());
-            instrucao.setString(6, t.getTelefone());
-            instrucao.setInt(7, id);
+            instrucao.setString(5, t.getTelefone());
+            instrucao.setInt(6, id);
             instrucao.execute();
             minhaConexao.desconectar();
         }catch(Exception e){

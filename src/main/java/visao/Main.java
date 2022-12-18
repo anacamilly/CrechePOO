@@ -1166,6 +1166,216 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
                                 System.out.println("|--------------------------------------------------------|");
+
+                                break;
+
+                            case 2:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|          ALTERAÇÃO DE CADASTRO DO RESPONSÁVEL          |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DO RESPONSÁVEL QUE DESEJA ALTERAR:         |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idAlterarRespon = teclado.nextInt();
+
+                                var responsBusca = responsDao.buscar(idAlterarRespon);
+
+                                if (responsBusca == null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                } else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|       INFORMAÇÕES RELACIONADAS AO ID ESCOLHIDO         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| NOME: " + responsBusca.getNome());
+                                    System.out.println("| CPF: " + responsBusca.getCpf());
+                                    System.out.println("| SEXO: " + responsBusca.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + responsBusca.getDataNascimento());
+                                    System.out.println("| TELEFONE: " + responsBusca.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| O QUE PRECISA SER ALTERADO?                            |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| 1 - NOME                                               |");
+                                    System.out.println("| 2 - CPF                                                |");
+                                    System.out.println("| 3 - SEXO                                               |");
+                                    System.out.println("| 4 - DATA DE NASCIMENTO                                 |");
+                                    System.out.println("| 5 - TELEFONE                                           |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE A OPÇÃO DESEJADA:                               |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var opc4 = teclado.nextInt();
+
+                                    teclado.nextLine();
+
+
+                                    switch (opc4) {
+                                        case 1:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE NOME                   |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O NOME DO RESPONSÁVEL: " + responsBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO NOME DO RESPONSÁVEL:                     |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String nomeAlteradoR = teclado.nextLine();
+                                            responsavel.setNome(nomeAlteradoR);
+
+                                            String cpfresp = responsBusca.getCpf();
+                                            responsavel.setCpf(cpfresp);
+
+                                            String sexoresp = responsBusca.getSexo();
+                                            responsavel.setSexo(sexoresp);
+
+                                            String nascimentoresp = responsBusca.getDataNascimento();
+                                            responsavel.setDataNascimento(nascimentoresp);
+
+                                            String telefoneresp = responsBusca.getTelefone();
+                                            responsavel.setTelefone(telefoneresp);
+
+                                            responsavel.setId(idAlterarRespon);
+
+                                            responsDao.alteracao(responsavel, idAlterarRespon);
+
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                NOME ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 2:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE CPF                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O CPF DO REPONSÁVEL: " + responsBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO CPF DO RESPONSÁVEL:                      |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String cpfAlteradoR = teclado.nextLine();
+                                            responsavel.setCpf(cpfAlteradoR);
+
+                                            String nomeresp2 = responsBusca.getNome();
+                                            responsavel.setNome(nomeresp2);
+
+                                            String sexoresp2 = responsBusca.getSexo();
+                                            responsavel.setSexo(sexoresp2);
+
+                                            String nascimentoresp2 = responsBusca.getDataNascimento();
+                                            responsavel.setDataNascimento(nascimentoresp2);
+
+                                            String telefoneresp2 = responsBusca.getTelefone();
+                                            responsavel.setTelefone(telefoneresp2);
+
+                                            responsavel.setId(idAlterarRespon);
+
+                                            responsDao.alteracao(responsavel, idAlterarRespon);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                 CPF ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 3:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                   ALTERAÇÃO DE SEXO                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O SEXO DO RESPONSÁVEL: " + responsBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO SEXO DO RESPONSÁVEL:                     |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String sexoAlteradoR = teclado.nextLine();
+                                            responsavel.setSexo(sexoAlteradoR);
+
+                                            String nomeresp3 = responsBusca.getNome();
+                                            responsavel.setNome(nomeresp3);
+
+                                            String cpfresp3 = responsBusca.getCpf();
+                                            responsavel.setCpf(cpfresp3);
+
+                                            String nascimentoresp3 = responsBusca.getDataNascimento();
+                                            responsavel.setDataNascimento(nascimentoresp3);
+
+                                            String telefoneresp3 = responsBusca.getTelefone();
+                                            responsavel.setTelefone(telefoneresp3);
+
+                                            responsavel.setId(idAlterarRespon);
+
+                                            responsDao.alteracao(responsavel, idAlterarRespon);
+
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                SEXO ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 4:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|            ALTERAÇÃO DA DATA DE NASCIMENTO             |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO A DATA DE NASCIMENTO DO RESPONSÁVEL: " + responsBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE A DATA DE NASCIMENTO DO RESPONSÁVEL:            |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String dataAlteradaR = teclado.nextLine();
+                                            responsavel.setDataNascimento(dataAlteradaR);
+
+                                            String nomeresp4 = responsBusca.getNome();
+                                            responsavel.setNome(nomeresp4);
+
+                                            String cpfresp4 = responsBusca.getCpf();
+                                            responsavel.setCpf(cpfresp4);
+
+                                            String sexoresp4 = responsBusca.getSexo();
+                                            responsavel.setSexo(sexoresp4);
+
+                                            String telefoneresp4 = responsBusca.getTelefone();
+                                            responsavel.setTelefone(telefoneresp4);
+
+                                            responsavel.setId(idAlterarRespon);
+
+                                            responsDao.alteracao(responsavel, idAlterarRespon);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|        DATA DE NASCIMENTO ALTERADA COM SUCESSO         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 5:
+                                            teclado.nextLine();
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                ALTERAÇÃO DE TELEFONE                   |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO A MATRÍCULA DA CRIANÇA: " + responsBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE A NOVA MATRÍCULA DA CRIANÇA:                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String telefoneAlteradoR = teclado.nextLine();
+                                            responsavel.setTelefone(telefoneAlteradoR);
+
+                                            String nomeresp5 = responsBusca.getNome();
+                                            responsavel.setNome(nomeresp5);
+
+                                            String cpfresp5 = responsBusca.getCpf();
+                                            responsavel.setCpf(cpfresp5);
+
+                                            String sexoresp5 = responsBusca.getSexo();
+                                            responsavel.setSexo(sexoresp5);
+
+                                            String nascimentoresp5 = responsBusca.getDataNascimento();
+                                            responsavel.setDataNascimento(nascimentoresp5);
+
+                                            responsavel.setId(idAlterarRespon);
+
+                                            responsDao.alteracao(responsavel, idAlterarRespon);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             TELEFONE ALTERADO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+
+                                    }
+                                }
                                 break;
 
                         }
