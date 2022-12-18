@@ -1378,6 +1378,34 @@ public class Main {
                                 }
                                 break;
 
+                            case 3:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|            BUSCAR CADASTRO DE RESPONSÁVEL              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DO RESPONSÁVEL:                            |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idBuscaResp = teclado.nextInt();
+
+                                var buscaRespons = responsDao.buscar(idBuscaResp);
+
+
+                                if (buscaRespons != null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ID: " + buscaRespons.getId());
+                                    System.out.println("| NOME: " + buscaRespons.getNome());
+                                    System.out.println("| CPF: " + buscaRespons.getCpf());
+                                    System.out.println("| SEXO: " + buscaRespons.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + buscaRespons.getDataNascimento());
+                                    System.out.println("| TELEFONE: " + buscaRespons.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                } else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO ENCONTRADO                        |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
+
                         }
 
                         }while (digitoRespon != 6);
