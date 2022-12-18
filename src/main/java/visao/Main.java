@@ -834,6 +834,18 @@ public class Main {
                                 }
 
                                 break;
+
+                            case 6:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|               SAIR DO MENU DE CUIDADORES               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                break;
+
+                            default:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                System.out.println("|--------------------------------------------------------|");
+
                         }
                     } while (digitoCuidador != 6);
 
@@ -997,12 +1009,6 @@ public class Main {
                                             System.out.println("|--------------------------------------------------------|");
 
                                             break;
-
-                                        default:
-                                            System.out.println("|--------------------------------------------------------|");
-                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
-                                            System.out.println("|--------------------------------------------------------|");
-
                                     }
                                 }
                                 break;
@@ -1057,7 +1063,7 @@ public class Main {
 
                                     switch (respEx3) {
                                         case "S", "s":
-                                            cuidadorDao.exclusao(idExcluir3);
+                                            turmaDao.exclusao(idExcluir3);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|             CADASTRO EXCLUÍDO COM SUCESSO              |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -1076,12 +1082,24 @@ public class Main {
                                 }
 
                                 break;
+
                             case 5:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                     LISTA DE TURMAS                    |");
+                                System.out.println("|--------------------------------------------------------|");
+
+                                for (Turma turmaList : turmaDao.listar()) {
+                                    System.out.println("| CÓDIGO: " + turmaList.getCodigo());
+                                    System.out.println("| NOME: " + turmaList.getNome());
+                                    System.out.println("| QUANTIDADE DE PARTICIPANTES: " + turmaList.getQuantidadeAlunos());
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
                                 break;
 
                             case 6:
                                 System.out.println("|--------------------------------------------------------|");
-                                System.out.println("|                SAIR DO MENU DE CRIANÇA                 |");
+                                System.out.println("|                 SAIR DO MENU DE TURMA                  |");
                                 System.out.println("|--------------------------------------------------------|");
 
                                 break;

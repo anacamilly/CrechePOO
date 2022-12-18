@@ -1,17 +1,18 @@
 package persistencia;
 
-import java.beans.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import dominio.Turma;
 
 public class TurmaDao{
 
     private Conexao minhaConexao;
-    private final String RELATORIO = "select * from turma";
+    private final String LISTAR = "select * from turma";
     private final String BUSCAR = "select * from turma where codigo=?";
     private final String INCLUIR = "insert into turma (codigo, nome, quantidadeAlunos) values (?, ?, ?)";
     private final String EXCLUIR = "delete from turma where codigo=?";
@@ -23,12 +24,12 @@ public class TurmaDao{
     }
 
 
-    public ArrayList<Turma> relatorio(){
-        ArrayList<Turma> lista = new ArrayList<>();
+    public List<Turma> listar(){
+        List<Turma> lista = new ArrayList<>();
         try{
             minhaConexao.conectar();
-            Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
-            ResultSet rs = ((java.sql.Statement) instrucao).executeQuery(RELATORIO);
+            java.sql.Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
+            ResultSet rs =((java.sql.Statement) instrucao).executeQuery(LISTAR);
             while(rs.next()){
                 Turma turma = new Turma (rs.getInt("codigo"), rs.getString("nome"), rs.getInt("quantidadeAlunos"));
                 lista.add(turma);
