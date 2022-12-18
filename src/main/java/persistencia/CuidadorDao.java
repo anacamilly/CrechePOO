@@ -1,17 +1,18 @@
 package persistencia;
 
-import java.beans.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import dominio.Cuidador;
 
 public class CuidadorDao {
 
     private Conexao minhaConexao;
-    private final String RELATORIO = "select * from \"cuidador\"";
+    private final String LISTAR = "select * from cuidador";
     private final String BUSCAR = "select * from cuidador where id=?";
     private final String INCLUIR = "insert into cuidador (nome, cpf, sexo, nascimento, salario, telefone) values ( ?, ?, ?, ?, ?, ?)";
     private final String EXCLUIR = "delete from cuidador where id=?";
@@ -23,12 +24,12 @@ public class CuidadorDao {
     }
 
 
-    public ArrayList<Cuidador> relatorio(){
-        ArrayList<Cuidador> lista = new ArrayList<>();
+    public List<Cuidador> listar(){
+        List<Cuidador> lista = new ArrayList<>();
         try{
             minhaConexao.conectar();
-            Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
-            ResultSet rs = ((java.sql.Statement) instrucao).executeQuery(RELATORIO);
+            java.sql.Statement instrucao = (Statement) minhaConexao.getConexao().createStatement();
+            ResultSet rs =((java.sql.Statement) instrucao).executeQuery(LISTAR);
             while(rs.next()){
                 Cuidador cuidador = new Cuidador (rs.getInt("id"), rs.getString("nome"), rs.getString("cpf"),
                         rs.getString("sexo"), rs.getString("nascimento"), rs.getFloat("salario"),

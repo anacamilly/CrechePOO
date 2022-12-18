@@ -816,6 +816,24 @@ public class Main {
 
                                 }
                                 break;
+
+                            case 5:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                   LISTA DE CUIDADORES                  |");
+                                System.out.println("|--------------------------------------------------------|");
+
+                                for (Cuidador cuidadorList : cuidadorDao.listar()) {
+                                    System.out.println("| ID: " + cuidadorList.getId());
+                                    System.out.println("| NOME: " + cuidadorList.getNome());
+                                    System.out.println("| CPF: " + cuidadorList.getCpf());
+                                    System.out.println("| SEXO: " + cuidadorList.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + cuidadorList.getDataNascimento());
+                                    System.out.println("| SALÁRIO: " + cuidadorList.getSalario());
+                                    System.out.println("| TELEFONE: " + cuidadorList.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
                         }
                     } while (digitoCuidador != 6);
 
