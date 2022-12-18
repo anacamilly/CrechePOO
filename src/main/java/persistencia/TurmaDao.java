@@ -12,7 +12,7 @@ public class TurmaDao{
 
     private Conexao minhaConexao;
     private final String RELATORIO = "select * from \"turma\"";
-    private final String BUSCAR = "select * from \"turma\" where \"codigo\"=?";
+    private final String BUSCAR = "select * from turma where codigo=?";
     private final String INCLUIR = "insert into turma (codigo, nome, quantidadeAlunos) values (?, ?, ?)";
     private final String EXCLUIR = "delete from \"turma\" where \"codigo\"=?";
     private final String ALTERAR = "update \"turma set \"codigo\"=?, \"\"nome\"=?, \"quantidadeAlunos\"=?";

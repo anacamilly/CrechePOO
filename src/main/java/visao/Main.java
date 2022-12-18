@@ -58,7 +58,7 @@ public class Main {
                         digitoCrianca = teclado.nextInt();
                         teclado.nextLine();
 
-                        switch(digitoCrianca) {
+                        switch (digitoCrianca) {
                             case 1:
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("|                  CADASTRO DA CRIANÇA                   |");
@@ -102,7 +102,7 @@ public class Main {
 
                                 var crianca_busca = crianDao.buscar(id_alterar);
 
-                                if(crianca_busca == null) {
+                                if (crianca_busca == null) {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
                                     System.out.println("|--------------------------------------------------------|");
@@ -312,7 +312,7 @@ public class Main {
                                 var crn = crianDao.buscar(id_busca);
 
 
-                                if(crn != null) {
+                                if (crn != null) {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("| ID: " + crn.getId());
                                     System.out.println("| NOME: " + crn.getNome());
@@ -321,7 +321,7 @@ public class Main {
                                     System.out.println("| DATA DE NASCIMENTO: " + crn.getDataNascimento());
                                     System.out.println("| MATRÍCULA: " + crn.getMatricula());
                                     System.out.println("|--------------------------------------------------------|");
-                                }else {
+                                } else {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("| ATENÇÃO: ESSE ID NÃO ENCONTRADO                        |");
                                     System.out.println("|--------------------------------------------------------|");
@@ -341,7 +341,7 @@ public class Main {
 
                                 var verificaExc = crianDao.buscar(id_excluir);
 
-                                if(verificaExc != null) {
+                                if (verificaExc != null) {
                                     teclado.nextLine();
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("|         CADASTRO DA CRIANÇA QUE SERÁ EXCLUÍDO:         |");
@@ -357,7 +357,7 @@ public class Main {
                                     System.out.println("|--------------------------------------------------------|");
                                     var respEx = teclado.nextLine();
 
-                                    switch (respEx){
+                                    switch (respEx) {
                                         case "S":
                                             crianDao.remove(crianca);
                                             System.out.println("|--------------------------------------------------------|");
@@ -394,7 +394,7 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
 
                         }
-                    }while(digitoCrianca != 6);
+                    } while (digitoCrianca != 6);
 
                     break;
 
@@ -416,7 +416,7 @@ public class Main {
                         digitoCuidador = teclado.nextInt();
                         teclado.nextLine();
 
-                        switch(digitoCuidador) {
+                        switch (digitoCuidador) {
                             case 1:
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("|                 CADASTRO DE CUIDADOR                   |");
@@ -733,7 +733,7 @@ public class Main {
                                 var buscaCuidador = cuidadorDao.buscar(idBuscaCuid);
 
 
-                                if(buscaCuidador != null) {
+                                if (buscaCuidador != null) {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("| ID: " + buscaCuidador.getId());
                                     System.out.println("| NOME: " + buscaCuidador.getNome());
@@ -743,7 +743,7 @@ public class Main {
                                     System.out.println("| SALÁRIO:" + buscaCuidador.getSalario());
                                     System.out.println("| TELEFONE:" + buscaCuidador.getTelefone());
                                     System.out.println("|--------------------------------------------------------|");
-                                }else {
+                                } else {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("| ATENÇÃO: ESSE ID NÃO ENCONTRADO                        |");
                                     System.out.println("|--------------------------------------------------------|");
@@ -762,7 +762,7 @@ public class Main {
 
                                 var verificaExc2 = cuidadorDao.buscar(idExcluir2);
 
-                                if(verificaExc2 != null) {
+                                if (verificaExc2 != null) {
                                     teclado.nextLine();
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("|        CADASTRO DO CUIDADOR QUE SERÁ EXCLUÍDO:         |");
@@ -779,7 +779,7 @@ public class Main {
                                     System.out.println("|--------------------------------------------------------|");
                                     var respEx2 = teclado.nextLine();
 
-                                    switch (respEx2){
+                                    switch (respEx2) {
                                         case "S", "s":
                                             cuidadorDao.exclusao(idExcluir2);
                                             System.out.println("|--------------------------------------------------------|");
@@ -801,7 +801,7 @@ public class Main {
                                 }
                                 break;
                         }
-                    }while(digitoCuidador != 6);
+                    } while (digitoCuidador != 6);
 
                     break;
 
@@ -822,7 +822,7 @@ public class Main {
 
                         digitoTurma = teclado.nextInt();
 
-                        switch(digitoTurma) {
+                        switch (digitoTurma) {
                             case 1:
                                 teclado.nextLine();
                                 System.out.println("|--------------------------------------------------------|");
@@ -861,7 +861,7 @@ public class Main {
 
                                 var turmaBusca = turmaDao.buscar(idAlterarTurma);
 
-                                if(turmaBusca == null) {
+                                if (turmaBusca == null) {
                                     System.out.println("|--------------------------------------------------------|");
                                     System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
                                     System.out.println("|--------------------------------------------------------|");
@@ -973,15 +973,109 @@ public class Main {
                                 }
                                 break;
 
+                            case 3:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|               BUSCAR CADASTRO DE TURMA                 |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CÓDIGO DA TURMA:                              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idBuscaTurma = teclado.nextInt();
+                                teclado.nextLine();
+
+                                var buscaTurma = turmaDao.buscar(idBuscaTurma);
+
+                                if (buscaTurma != null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| CÓDIGO: " + buscaTurma.getCodigo());
+                                    System.out.println("| NOME: " + buscaTurma.getNome());
+                                    System.out.println("| QUANTIDADE DE PARTICIPANTES: " + buscaTurma.getQuantidadeAlunos());
+                                    System.out.println("|--------------------------------------------------------|");
+                                } else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO ENCONTRADO                        |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
+                            case 4:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|           EXCLUSÃO DE CADASTRO DE CUIDADOR             |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DO CUIDADOR:                               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                var idExcluir3 = teclado.nextInt();
+                                cuidador.setId(idExcluir3);
+
+                                var verificaExc3 = turmaDao.buscar(idExcluir3);
+
+                                if (verificaExc3 != null) {
+                                    teclado.nextLine();
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|          CADASTRO DA TURMA QUE SERÁ EXCLUÍDO:          |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| CÓDIGO: " + verificaExc3.getCodigo());
+                                    System.out.println("| NOME: " + verificaExc3.getNome());
+                                    System.out.println("| QUANTIDADE DE PARTICIPANTES: " + verificaExc3.getQuantidadeAlunos());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: DESEJA EXCLUIR ESSE CADASTRO? DIGITE: S ou N  |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var respEx3 = teclado.nextLine();
+
+                                    switch (respEx3) {
+                                        case "S", "s":
+                                            cuidadorDao.exclusao(idExcluir3);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             CADASTRO EXCLUÍDO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+                                        case "N", "n":
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|       O CADASTRO NÃO SERÁ EXCLUÍDO - VOTE AO MENU      |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                    }
+                                }
+
+                                break;
+                            case 5:
+                                break;
+
+                            case 6:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                SAIR DO MENU DE CRIANÇA                 |");
+                                System.out.println("|--------------------------------------------------------|");
+
+                                break;
+                            default:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                System.out.println("|--------------------------------------------------------|");
                         }
 
-                        }while(digitoTurma != 6);
+                    }while(digitoTurma != 6);
 
-                        break;
+                    break;
+
                 case 4:
                     break;
+
                 case 5:
+                    System.out.println("|--------------------------------------------------------|");
+                    System.out.println("|                   SAINDO DO SISTEMA                    |");
+                    System.out.println("|--------------------------------------------------------|");
+
                     break;
+
+                default:
+                    System.out.println("|--------------------------------------------------------|");
+                    System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                    System.out.println("|--------------------------------------------------------|");
+
             }
 
                     break;
