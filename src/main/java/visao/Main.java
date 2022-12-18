@@ -326,13 +326,44 @@ public class Main {
                                 Crianca crianca = new Crianca();
                                 crianca.setId(id_excluir);
 
-                                CriancaDao dao = new CriancaDao();
+                                var verificaExc = crianDao.buscar(id_excluir);
 
-                                dao.remove(crianca);
+                                if(verificaExc != null) {
+                                    teclado.nextLine();
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|         CADASTRO DA CRIANÇA QUE SERÁ EXCLUÍDO:         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ID: " + verificaExc.getId());
+                                    System.out.println("| NOME: " + verificaExc.getNome());
+                                    System.out.println("| CPF: " + verificaExc.getCpf());
+                                    System.out.println("| SEXO: " + verificaExc.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + verificaExc.getDataNascimento());
+                                    System.out.println("| MATRÍCULA: " + verificaExc.getMatricula());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: DESEJA EXCLUIR ESSE CADASTRO? DIGITE: S ou N  |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var respEx = teclado.nextLine();
 
-                                System.out.println("|--------------------------------------------------------|");
-                                System.out.println("|             CRIANÇA EXCLUIDA COM SUCESSO               |");
-                                System.out.println("|--------------------------------------------------------|");
+                                    switch (respEx){
+                                        case "S":
+                                            crianDao.remove(crianca);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             CADASTRO EXCLUÍDO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+                                        case "N":
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|       O CADASTRO NÃO SERÁ EXCLUÍDO - VOTE AO MENU      |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                    }
+
+                                }
 
                                 break;
                         }
