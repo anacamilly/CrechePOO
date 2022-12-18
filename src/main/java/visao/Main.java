@@ -1039,9 +1039,9 @@ public class Main {
                                 break;
                             case 4:
                                 System.out.println("|--------------------------------------------------------|");
-                                System.out.println("|           EXCLUSÃO DE CADASTRO DE CUIDADOR             |");
+                                System.out.println("|            EXCLUSÃO DE CADASTRO DE TURMA               |");
                                 System.out.println("|--------------------------------------------------------|");
-                                System.out.println("| DIGITE O ID DO CUIDADOR:                               |");
+                                System.out.println("| DIGITE O ID DA TURMA:                                  |");
                                 System.out.println("|--------------------------------------------------------|");
                                 var idExcluir3 = teclado.nextInt();
                                 cuidador.setId(idExcluir3);
@@ -1566,6 +1566,78 @@ public class Main {
                                 }
 
                                 break;
+
+                            case 4:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|        EXCLUSÃO DE CADASTRO DE EXTRACURRICULAR         |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DA EXTRACURRICULAR:                        |");
+                                System.out.println("|--------------------------------------------------------|");
+                                var idExcluirEx = teclado.nextInt();
+                                cuidador.setId(idExcluirEx);
+
+                                var verificaExc4 = extraCurricularDao.buscar(idExcluirEx);
+
+                                if (verificaExc4 != null) {
+                                    teclado.nextLine();
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|          CADASTRO DA TURMA QUE SERÁ EXCLUÍDO:          |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| CÓDIGO: " + verificaExc4.getCod());
+                                    System.out.println("| NOME: " + verificaExc4.getNome());
+                                    System.out.println("| MODALIDADE: " + verificaExc4.getModalidade());
+                                    System.out.println("| CÓDIGO DA TURMA: " + verificaExc4.getCodTurma());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: DESEJA EXCLUIR ESSE CADASTRO? DIGITE: S ou N  |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var respEx4 = teclado.nextLine();
+
+                                    switch (respEx4) {
+                                        case "S", "s":
+                                            extraCurricularDao.exclusao(idExcluirEx);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             CADASTRO EXCLUÍDO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+                                        case "N", "n":
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|       O CADASTRO NÃO SERÁ EXCLUÍDO - VOTE AO MENU      |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                    }
+                                }
+
+                                break;
+                            case 5:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|               LISTA DE EXTRACURRICULARES               |");
+                                System.out.println("|--------------------------------------------------------|");
+
+                                for (ExtraCurricular extraCurricularList : extraCurricularDao.listar()) {
+                                    System.out.println("| CÓDIGO: " + extraCurricularList.getCod());
+                                    System.out.println("| NOME: " + extraCurricularList.getNome());
+                                    System.out.println("| MODALIDADE: " + extraCurricularList.getModalidade());
+                                    System.out.println("| CÓDIGO DA TURMA: " + extraCurricularList.getCodTurma());
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
+
+                            case 6:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             SAIR DO MENU DE EXTRACURRICULAR            |");
+                                System.out.println("|--------------------------------------------------------|");
+
+                                break;
+                            default:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                System.out.println("|--------------------------------------------------------|");
                         }
 
                     }while (digitoExCurricular != 6);
