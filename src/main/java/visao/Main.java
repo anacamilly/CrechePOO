@@ -315,7 +315,25 @@ public class Main {
                                 }
 
                                 break;
+
                             case 4:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                EXCLUSÃO DE CRIANÇA                     |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DA CRIANÇA:                                |");
+                                System.out.println("|--------------------------------------------------------|");
+                                var id_excluir = teclado.nextInt();
+                                Crianca crianca = new Crianca();
+                                crianca.setId(id_excluir);
+
+                                CriancaDao dao = new CriancaDao();
+
+                                dao.remove(crianca);
+
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|             CRIANÇA EXCLUIDA COM SUCESSO               |");
+                                System.out.println("|--------------------------------------------------------|");
+
                                 break;
                         }
                     }while(digitoAluno != 6);
