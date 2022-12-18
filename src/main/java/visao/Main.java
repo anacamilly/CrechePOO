@@ -876,25 +876,36 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("| DIGITE O CÓDIGO DA TURMA:                              |");
                                 System.out.println("|--------------------------------------------------------|");
-                                turma.setCodigo(teclado.nextInt());
-                                teclado.nextLine();
-                                System.out.println("|--------------------------------------------------------|");
-                                System.out.println("| DIGITE O NOME DA TURMA:                                |");
-                                System.out.println("|--------------------------------------------------------|");
-                                turma.setNome(teclado.nextLine());
-                                System.out.println("|--------------------------------------------------------|");
-                                System.out.println("| DIGITE A QUANTIDADE DE PARTICIPANTES DA TURMA:         |");
-                                System.out.println("|--------------------------------------------------------|");
-                                turma.setQuantidadeAlunos(teclado.nextInt());
-                                System.out.println("|--------------------------------------------------------|");
-
+                                int codt = teclado.nextInt();
                                 teclado.nextLine();
 
-                                turmaDao.insert(turma);
+                                var verificaCodTurCadas = turmaDao.buscar(codt);
 
-                                System.out.println("|--------------------------------------------------------|");
-                                System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
-                                System.out.println("|--------------------------------------------------------|");
+                                if(verificaCodTurCadas != null){
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|     JÁ EXISTE TURMA COM ESSE CÓDIGO, TENTE NOVAMENTE   |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }else {
+                                    turma.setCodigo(codt);
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE O NOME DA TURMA:                                |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    turma.setNome(teclado.nextLine());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE A QUANTIDADE DE PARTICIPANTES DA TURMA:         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    turma.setQuantidadeAlunos(teclado.nextInt());
+                                    System.out.println("|--------------------------------------------------------|");
+
+                                    teclado.nextLine();
+
+                                    turmaDao.insert(turma);
+
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
                                 break;
 
                             case 2:
