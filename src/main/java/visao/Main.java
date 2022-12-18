@@ -253,6 +253,7 @@ public class Main {
                                             break;
 
                                         case 5:
+                                            teclado.nextLine();
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|                ALTERAÇÃO DE MATRÍCULA                  |");
                                             System.out.println("|--------------------------------------------------------|");
