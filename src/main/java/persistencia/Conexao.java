@@ -9,14 +9,14 @@ public class Conexao {
     private static final String user = "root";
     private static final String senha ="";
     private static final String caminho = "jdbc:mysql://localhost:3306/creche?useTimezone=true&serverTimezone=UTC";
-    static Connection connection ;
+    private static java.sql.Connection connection;
 
     public Connection conectar() {
         try {
             connection = DriverManager.getConnection(caminho, user, senha);
-            System.out.print("|--------------------------------------------------------|\n");
+            //System.out.print("|--------------------------------------------------------|\n");
             System.out.print("|       CONEXÃO COM O BANCO EFETUADA COM SUCESSO         |\n");
-            System.out.print("|--------------------------------------------------------|\n");
+            //System.out.print("|--------------------------------------------------------|\n");
         }
         catch(SQLException e)
         {
