@@ -35,7 +35,7 @@ public class Main {
             digito = teclado.nextInt();
             switch(digito) {
                 case 1:
-                    int digitoAluno;
+                    int digitoCrianca;
                     Crianca crian = new Crianca();
                     do {
                         teclado.nextLine();
@@ -50,10 +50,10 @@ public class Main {
                                 + "| 6 - SAIR DO MENU DA CRIANÇA                            |\n"
                                 + "|--------------------------------------------------------|\n");
 
-                        digitoAluno = teclado.nextInt();
+                        digitoCrianca = teclado.nextInt();
                         teclado.nextLine();
 
-                        switch(digitoAluno) {
+                        switch(digitoCrianca) {
                             case 1:
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("|                  CADASTRO DA CRIANÇA                   |");
@@ -382,7 +382,7 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
 
                         }
-                    }while(digitoAluno != 6);
+                    }while(digitoCrianca != 6);
 
                     break;
 
