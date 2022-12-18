@@ -1,13 +1,7 @@
 package visao;
 
-import dominio.Crianca;
-import dominio.Cuidador;
-import dominio.Responsavel;
-import dominio.Turma;
-import persistencia.CriancaDao;
-import persistencia.CuidadorDao;
-import persistencia.ResponsavelDao;
-import persistencia.TurmaDao;
+import dominio.*;
+import persistencia.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,11 +12,13 @@ public class Main {
     static Cuidador cuidador = new Cuidador();
     static Turma turma = new Turma();
     static Responsavel responsavel = new Responsavel();
+    static ExtraCurricular extraCurricular = new ExtraCurricular();
     static CriancaDao crianDao = new CriancaDao();
     static CuidadorDao cuidadorDao= new CuidadorDao();
     static TurmaDao turmaDao= new TurmaDao();
     static ResponsavelDao responsDao = new ResponsavelDao();
 
+    static ExtraCurricularDao extraCurricularDao = new ExtraCurricularDao();
 
     public static void main(String[] args) {
         int digito;
@@ -1503,8 +1499,50 @@ public class Main {
 
                         switch (digitoExCurricular){
                             case 1:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|              CADASTRO DE EXTRACURRICULAR               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CÓDIGO DA TURMA PARA A EXTRACURRICULAR:       |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int codEx = teclado.nextInt();
+
+                                var verificaCodEx = turmaDao.buscar(codEx);
+
+                                if(verificaCodEx == null){
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|    NÃO EXISTE TURMA COM ESSE CÓDIGO, TENTE NOVAMENTE   |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }else{
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE O CÓDIGO PARA EXTRACURRICULAR:                  |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    extraCurricular.setCod(teclado.nextInt());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE O NOME DA EXTRACURRICULAR:                      |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    teclado.nextLine();
+                                    extraCurricular.setNome(teclado.nextLine());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE A MODALIDADE DA EXTRACURRICULAR:                |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    extraCurricular.setModalidade(teclado.nextLine());
+
+                                    extraCurricular.setCodTurma(codEx);
+
+                                    extraCurricularDao.insert(extraCurricular);
+
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|            CADASTRO CONCLUÍDO COM SUCESSO              |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
+
+                            case 2:
+
                                 break;
                         }
+
                     }while (digitoExCurricular != 6);
                     break;
 
