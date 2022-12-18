@@ -124,7 +124,6 @@ public class Main {
                                     var opc = teclado.nextInt();
 
                                     teclado.nextLine();
-                                    Crianca crianAlt = new Crianca();
 
 
                                     switch (opc) {
@@ -137,23 +136,23 @@ public class Main {
                                             System.out.println("| DIGITE O NOVO NOME DA CRIANÇA:                         |");
                                             System.out.println("|--------------------------------------------------------|");
                                             String nomeAlterado = teclado.nextLine();
-                                            crianAlt.setNome(nomeAlterado);
+                                            crian.setNome(nomeAlterado);
 
                                             String cpfcri = crianca_busca.getCpf();
-                                            crianAlt.setCpf(cpfcri);
+                                            crian.setCpf(cpfcri);
 
                                             String sexocri = crianca_busca.getSexo();
-                                            crianAlt.setSexo(sexocri);
+                                            crian.setSexo(sexocri);
 
                                             String nascimentocri = crianca_busca.getDataNascimento();
-                                            crianAlt.setDataNascimento(nascimentocri);
+                                            crian.setDataNascimento(nascimentocri);
 
                                             int matriculacri = crianca_busca.getMatricula();
-                                            crianAlt.setMatricula(matriculacri);
+                                            crian.setMatricula(matriculacri);
 
-                                            crianAlt.setId(id_alterar);
+                                            crian.setId(id_alterar);
 
-                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            crianDao.alteracao(crian, id_alterar);
 
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|                NOME ALTERADO COM SUCESSO               |");
@@ -169,23 +168,23 @@ public class Main {
                                             System.out.println("| DIGITE O NOVO CPF DA CRIANÇA:                          |");
                                             System.out.println("|--------------------------------------------------------|");
                                             String cpfAlterado = teclado.nextLine();
-                                            crianAlt.setCpf(cpfAlterado);
+                                            crian.setCpf(cpfAlterado);
 
                                             String nomecri = crianca_busca.getNome();
-                                            crianAlt.setNome(nomecri);
+                                            crian.setNome(nomecri);
 
                                             String sexocri2 = crianca_busca.getSexo();
-                                            crianAlt.setSexo(sexocri2);
+                                            crian.setSexo(sexocri2);
 
                                             String nascimentocri2 = crianca_busca.getDataNascimento();
-                                            crianAlt.setDataNascimento(nascimentocri2);
+                                            crian.setDataNascimento(nascimentocri2);
 
                                             int matriculacri2 = crianca_busca.getMatricula();
-                                            crianAlt.setMatricula(matriculacri2);
+                                            crian.setMatricula(matriculacri2);
 
-                                            crianAlt.setId(id_alterar);
+                                            crian.setId(id_alterar);
 
-                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            crianDao.alteracao(crian, id_alterar);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|                 CPF ALTERADO COM SUCESSO               |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -200,23 +199,23 @@ public class Main {
                                             System.out.println("| DIGITE O NOVO SEXO DA CRIANÇA:                         |");
                                             System.out.println("|--------------------------------------------------------|");
                                             String sexoAlterado = teclado.nextLine();
-                                            crianAlt.setSexo(sexoAlterado);
+                                            crian.setSexo(sexoAlterado);
 
                                             String nomecri3 = crianca_busca.getNome();
-                                            crianAlt.setNome(nomecri3);
+                                            crian.setNome(nomecri3);
 
                                             String cpfcri3 = crianca_busca.getCpf();
-                                            crianAlt.setCpf(cpfcri3);
+                                            crian.setCpf(cpfcri3);
 
                                             String nascimentocri3 = crianca_busca.getDataNascimento();
-                                            crianAlt.setDataNascimento(nascimentocri3);
+                                            crian.setDataNascimento(nascimentocri3);
 
                                             int matriculacri3 = crianca_busca.getMatricula();
-                                            crianAlt.setMatricula(matriculacri3);
+                                            crian.setMatricula(matriculacri3);
 
-                                            crianAlt.setId(id_alterar);
+                                            crian.setId(id_alterar);
 
-                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            crianDao.alteracao(crian, id_alterar);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|                SEXO ALTERADO COM SUCESSO               |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -231,23 +230,23 @@ public class Main {
                                             System.out.println("| DIGITE A DATA DE NASCIMENTO DA CRIANÇA:                |");
                                             System.out.println("|--------------------------------------------------------|");
                                             String dataAlterada = teclado.nextLine();
-                                            crianAlt.setDataNascimento(dataAlterada);
+                                            crian.setDataNascimento(dataAlterada);
 
                                             String nomecri4 = crianca_busca.getNome();
-                                            crianAlt.setNome(nomecri4);
+                                            crian.setNome(nomecri4);
 
                                             String cpfcri4 = crianca_busca.getCpf();
-                                            crianAlt.setCpf(cpfcri4);
+                                            crian.setCpf(cpfcri4);
 
                                             String sexocri4 = crianca_busca.getSexo();
-                                            crianAlt.setSexo(sexocri4);
+                                            crian.setSexo(sexocri4);
 
                                             int matriculacri4 = crianca_busca.getMatricula();
-                                            crianAlt.setMatricula(matriculacri4);
+                                            crian.setMatricula(matriculacri4);
 
-                                            crianAlt.setId(id_alterar);
+                                            crian.setId(id_alterar);
 
-                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            crianDao.alteracao(crian, id_alterar);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|        DATA DE NASCIMENTO ALTERADA COM SUCESSO         |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -263,23 +262,23 @@ public class Main {
                                             System.out.println("| DIGITE A NOVA MATRÍCULA DA CRIANÇA:                    |");
                                             System.out.println("|--------------------------------------------------------|");
                                             int matriculaAlterada = teclado.nextInt();
-                                            crianAlt.setMatricula(matriculaAlterada);
+                                            crian.setMatricula(matriculaAlterada);
 
                                             String nomecri5 = crianca_busca.getNome();
-                                            crianAlt.setNome(nomecri5);
+                                            crian.setNome(nomecri5);
 
                                             String cpfcri5 = crianca_busca.getCpf();
-                                            crianAlt.setCpf(cpfcri5);
+                                            crian.setCpf(cpfcri5);
 
                                             String sexocri5 = crianca_busca.getSexo();
-                                            crianAlt.setSexo(sexocri5);
+                                            crian.setSexo(sexocri5);
 
                                             String nascimentocri5 = crianca_busca.getDataNascimento();
-                                            crianAlt.setDataNascimento(nascimentocri5);
+                                            crian.setDataNascimento(nascimentocri5);
 
-                                            crianAlt.setId(id_alterar);
+                                            crian.setId(id_alterar);
 
-                                            crianDao.alteracao(crianAlt, id_alterar);
+                                            crianDao.alteracao(crian, id_alterar);
                                             System.out.println("|--------------------------------------------------------|");
                                             System.out.println("|             MATRÍCULA ALTERADA COM SUCESSO             |");
                                             System.out.println("|--------------------------------------------------------|");
@@ -291,7 +290,7 @@ public class Main {
 
                             case 3:
                                 System.out.println("|--------------------------------------------------------|");
-                                System.out.println("|                     BUSCA DE CRIANÇA                   |");
+                                System.out.println("|              BUSCAR CADASTRO DE CRIANÇA                |");
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("| DIGITE O ID DA CRIANÇA:                                |");
                                 System.out.println("|--------------------------------------------------------|");
@@ -320,7 +319,7 @@ public class Main {
 
                             case 4:
                                 System.out.println("|--------------------------------------------------------|");
-                                System.out.println("|                EXCLUSÃO DE CRIANÇA                     |");
+                                System.out.println("|           EXCLUSÃO DE CADASTRO DE CRIANÇA              |");
                                 System.out.println("|--------------------------------------------------------|");
                                 System.out.println("| DIGITE O ID DA CRIANÇA:                                |");
                                 System.out.println("|--------------------------------------------------------|");
@@ -444,9 +443,347 @@ public class Main {
                                 System.out.println("|--------------------------------------------------------|");
 
                                 break;
-                        }
 
-                        }while(digitoCuidador != 6);
+                            case 2:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|           ALTERAÇÃO DE CADASTRO DO CUIDADOR            |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DO CUIDADOR QUE DESEJA ALTERAR:            |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idAlterarCuidador = teclado.nextInt();
+
+                                var cuidadorBusca = cuidadorDao.buscar(idAlterarCuidador);
+
+                                if (cuidadorBusca == null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                } else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|       INFORMAÇÕES RELACIONADAS AO ID ESCOLHIDO         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| NOME:" + cuidadorBusca.getNome());
+                                    System.out.println("| CPF: " + cuidadorBusca.getCpf());
+                                    System.out.println("| SEXO:" + cuidadorBusca.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO:" + cuidadorBusca.getDataNascimento());
+                                    System.out.println("| SALÁRIO:" + cuidadorBusca.getSalario());
+                                    System.out.println("| TELEFONE:" + cuidadorBusca.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| O QUE PRECISA SER ALTERADO?                            |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| 1 - NOME                                               |");
+                                    System.out.println("| 2 - CPF                                                |");
+                                    System.out.println("| 3 - SEXO                                               |");
+                                    System.out.println("| 4 - DATA DE NASCIMENTO                                 |");
+                                    System.out.println("| 5 - SALÁRIO                                            |");
+                                    System.out.println("| 6 - TELEFONE                                            |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE A OPÇÃO DESEJADA:                               |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var opc2 = teclado.nextInt();
+
+                                    teclado.nextLine();
+
+                                    switch (opc2) {
+                                        case 1:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE NOME                   |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O NOME DO CUIDADOR:" + cuidadorBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO NOME DO CUIDADOR:                        |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String nomeAlterado2 = teclado.nextLine();
+                                            cuidador.setNome(nomeAlterado2);
+
+                                            String cpfcuid = cuidadorBusca.getCpf();
+                                            cuidador.setCpf(cpfcuid);
+
+                                            String sexocuid = cuidadorBusca.getSexo();
+                                            cuidador.setSexo(sexocuid);
+
+                                            String nascimentocri = cuidadorBusca.getDataNascimento();
+                                            cuidador.setDataNascimento(nascimentocri);
+
+                                            float salariocuid = cuidadorBusca.getSalario();
+                                            cuidador.setSalario(salariocuid);
+
+                                            String telefonecuid = cuidadorBusca.getTelefone();
+                                            cuidador.setTelefone(telefonecuid);
+
+                                            cuidador.setId(idAlterarCuidador);
+
+                                            cuidadorDao.alteracao(cuidador, idAlterarCuidador);
+
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                NOME ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 2:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE CPF                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O CPF DO CUIDADOR: " + cuidador.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO CPF DO CUIDADOR:                         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String cpfAlterado2 = teclado.nextLine();
+                                            cuidador.setCpf(cpfAlterado2);
+
+                                            String nomecuid2 = cuidadorBusca.getNome();
+                                            cuidador.setNome(nomecuid2);
+
+                                            String sexocuid2 = cuidadorBusca.getSexo();
+                                            cuidador.setSexo(sexocuid2);
+
+                                            String nascimentocuid2 = cuidadorBusca.getDataNascimento();
+                                            cuidador.setDataNascimento(nascimentocuid2);
+
+                                            float salariocuid2 = cuidadorBusca.getSalario();
+                                            cuidador.setSalario(salariocuid2);
+
+                                            String telefonecuid2 = cuidadorBusca.getTelefone();
+                                            cuidador.setTelefone(telefonecuid2);
+
+
+                                            cuidador.setId(idAlterarCuidador);
+
+                                            cuidadorDao.alteracao(cuidador, idAlterarCuidador);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                 CPF ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 3:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                   ALTERAÇÃO DE SEXO                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O SEXO DO CUIDADOR: " + cuidadorBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO SEXO DO CUIDADOR:                        |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String sexoAlterado2 = teclado.nextLine();
+                                            cuidador.setSexo(sexoAlterado2);
+
+                                            String nomecuid3 = cuidadorBusca.getNome();
+                                            cuidador.setNome(nomecuid3);
+
+                                            String cpfcuid3 = cuidadorBusca.getCpf();
+                                            cuidador.setCpf(cpfcuid3);
+
+                                            String nascimentocuid3 = cuidadorBusca.getDataNascimento();
+                                            cuidador.setDataNascimento(nascimentocuid3);
+
+                                            float salariocuid3 = cuidadorBusca.getSalario();
+                                            cuidador.setSalario(salariocuid3);
+                                            ;
+
+                                            String telefonecuid3 = cuidadorBusca.getTelefone();
+                                            cuidador.setTelefone(telefonecuid3);
+
+
+                                            cuidador.setId(idAlterarCuidador);
+
+                                            cuidadorDao.alteracao(cuidador, idAlterarCuidador);
+
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                SEXO ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 4:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|            ALTERAÇÃO DA DATA DE NASCIMENTO             |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO A DATA DE NASCIMENTO DO CUIDADOR: " + cuidadorBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE A DATA DE NASCIMENTO DO CUIDADOR:               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String dataAlterada2 = teclado.nextLine();
+                                            cuidador.setDataNascimento(dataAlterada2);
+
+                                            String nomecuid4 = cuidadorBusca.getNome();
+                                            cuidador.setNome(nomecuid4);
+
+                                            String cpfcuid4 = cuidadorBusca.getCpf();
+                                            cuidador.setCpf(cpfcuid4);
+
+                                            String sexocuid4 = cuidadorBusca.getSexo();
+                                            cuidador.setSexo(sexocuid4);
+
+                                            float salariocuid4 = cuidadorBusca.getSalario();
+                                            cuidador.setSalario(salariocuid4);
+                                            ;
+
+                                            String telefonecuid4 = cuidadorBusca.getTelefone();
+                                            cuidador.setTelefone(telefonecuid4);
+
+                                            cuidador.setId(idAlterarCuidador);
+
+                                            cuidadorDao.alteracao(cuidador, idAlterarCuidador);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|        DATA DE NASCIMENTO ALTERADA COM SUCESSO         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 5:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                ALTERAÇÃO DE SALÁRIO                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O SALÁRIO DO CUIDADOR: " + cuidadorBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO SALÁRIO DO CUIDADOR:                     |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            float salarioAlterado = teclado.nextFloat();
+                                            cuidador.setSalario(salarioAlterado);
+
+                                            String nomecuid5 = cuidadorBusca.getNome();
+                                            cuidador.setNome(nomecuid5);
+
+                                            String cpfcuid5 = cuidadorBusca.getCpf();
+                                            cuidador.setCpf(cpfcuid5);
+
+                                            String sexocuid5 = cuidadorBusca.getSexo();
+                                            cuidador.setSexo(sexocuid5);
+
+                                            String nascimentocuid5 = cuidadorBusca.getDataNascimento();
+                                            cuidador.setDataNascimento(nascimentocuid5);
+
+                                            String telefonecuid5 = cuidadorBusca.getTelefone();
+                                            cuidador.setTelefone(telefonecuid5);
+
+
+                                            cuidador.setId(idAlterarCuidador);
+
+                                            cuidadorDao.alteracao(cuidador, idAlterarCuidador);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             SALÁRIO ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+
+                                        case 6:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                ALTERAÇÃO DE TELEFONE                   |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O TELEFONE DO CUIDADOR: " + cuidadorBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO TELEFONE DO CUIDADOR:                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            float telefoneAlterado = teclado.nextFloat();
+                                            cuidador.setSalario(telefoneAlterado);
+
+                                            String nomecuid6 = cuidadorBusca.getNome();
+                                            cuidador.setNome(nomecuid6);
+
+                                            String cpfcuid6 = cuidadorBusca.getCpf();
+                                            cuidador.setCpf(cpfcuid6);
+
+                                            String sexocuid6 = cuidadorBusca.getSexo();
+                                            cuidador.setSexo(sexocuid6);
+
+                                            String nascimentocuid6 = cuidadorBusca.getDataNascimento();
+                                            cuidador.setDataNascimento(nascimentocuid6);
+
+                                            String telefonecuid6 = cuidadorBusca.getTelefone();
+                                            cuidador.setTelefone(telefonecuid6);
+
+
+                                            cuidador.setId(idAlterarCuidador);
+
+                                            cuidadorDao.alteracao(cuidador, idAlterarCuidador);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             TELEFONE ALTERADO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+                                    }
+                                }
+
+                                break;
+
+                            case 3:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                    BUSCA DE CUIDADOR                   |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DO CUIDADOR:                               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idBuscaCuid = teclado.nextInt();
+                                teclado.nextLine();
+
+                                var buscaCuidador = cuidadorDao.buscar(idBuscaCuid);
+
+
+                                if(buscaCuidador != null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ID: " + buscaCuidador.getId());
+                                    System.out.println("| NOME: " + buscaCuidador.getNome());
+                                    System.out.println("| CPF: " + buscaCuidador.getCpf());
+                                    System.out.println("| SEXO:" + buscaCuidador.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + buscaCuidador.getDataNascimento());
+                                    System.out.println("| SALÁRIO:" + buscaCuidador.getSalario());
+                                    System.out.println("| TELEFONE:" + buscaCuidador.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                }else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO ENCONTRADO                        |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                }
+
+                                break;
+
+                            case 4:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|           EXCLUSÃO DE CADASTRO DE CUIDADOR             |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O ID DO CUIDADOR:                               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                var idExcluir2 = teclado.nextInt();
+                                cuidador.setId(idExcluir2);
+
+                                var verificaExc2 = cuidadorDao.buscar(idExcluir2);
+
+                                if(verificaExc2 != null) {
+                                    teclado.nextLine();
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|        CADASTRO DO CUIDADOR QUE SERÁ EXCLUÍDO:         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ID: " + verificaExc2.getId());
+                                    System.out.println("| NOME: " + verificaExc2.getNome());
+                                    System.out.println("| CPF: " + verificaExc2.getCpf());
+                                    System.out.println("| SEXO: " + verificaExc2.getSexo());
+                                    System.out.println("| DATA DE NASCIMENTO: " + verificaExc2.getDataNascimento());
+                                    System.out.println("| SALÁRIO: " + verificaExc2.getSalario());
+                                    System.out.println("| TELEFONE: " + verificaExc2.getTelefone());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: DESEJA EXCLUIR ESSE CADASTRO? DIGITE: S ou N  |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var respEx2 = teclado.nextLine();
+
+                                    switch (respEx2){
+                                        case "S", "s":
+                                            cuidadorDao.exclusao(idExcluir2);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             CADASTRO EXCLUÍDO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+                                        case "N", "n":
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|       O CADASTRO NÃO SERÁ EXCLUÍDO - VOTE AO MENU      |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+                                        default:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             OPÇÃO INVÁLIDA, TENTE NOVAMENTE            |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                    }
+
+                                }
+                                break;
+                        }
+                    }while(digitoCuidador != 6);
 
                     break;
 
