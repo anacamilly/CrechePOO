@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class Conexao {
     private static final String user = "root";
     private static final String senha ="";
-    private static final String caminho = "jdbc:mysql://localhost:3306/creche";
+    private static final String caminho = "jdbc:mysql://localhost:3306/creche?useTimezone=true&serverTimezone=UTC";
     static Connection connection ;
 
     public Connection conectar() {
