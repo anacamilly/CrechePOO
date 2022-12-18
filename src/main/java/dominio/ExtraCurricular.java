@@ -5,6 +5,12 @@ public class ExtraCurricular {
     private String nome;
     private String modalidade;
 
+    public ExtraCurricular(int codigo, String nome, String modalidade) {
+        this.cod = codigo;
+        this.nome = nome;
+        this.modalidade = modalidade;
+    }
+
     public String getNome() {
         return this.nome;
     }
