@@ -2,6 +2,7 @@ package visao;
 
 import dominio.Crianca;
 import dominio.Cuidador;
+import dominio.Turma;
 import persistencia.CriancaDao;
 import persistencia.CuidadorDao;
 
@@ -9,6 +10,9 @@ import java.util.Scanner;
 
 public class Main {
 
+    static Crianca crian = new Crianca();
+    static Cuidador cuidador = new Cuidador();
+    Turma turma = new Turma();
     static CriancaDao crianDao = new CriancaDao();
     static CuidadorDao cuidadorDao= new CuidadorDao();
 
@@ -36,7 +40,6 @@ public class Main {
             switch(digito) {
                 case 1:
                     int digitoCrianca;
-                    Crianca crian = new Crianca();
                     do {
                         teclado.nextLine();
                         System.out.println("\n|--------------------------------------------------------|\n"
@@ -388,7 +391,6 @@ public class Main {
 
                 case 2:
                     int digitoCuidador;
-                    Cuidador cuidador = new Cuidador();
                     do {
                         teclado.nextLine();
                         System.out.println("\n|--------------------------------------------------------|\n"
@@ -788,7 +790,26 @@ public class Main {
                     break;
 
                 case 3:
-                    break;
+                    int digitoTurma;
+                    do {
+                        teclado.nextLine();
+                        System.out.println("\n|--------------------------------------------------------|\n"
+                                + "|                       MENU DA TURMA                    |\n"
+                                + "|--------------------------------------------------------|\n"
+                                + "| 1 - CADASTRAR                                          |\n"
+                                + "| 2 - ALTERAR                                            |\n"
+                                + "| 3 - BUSCAR                                             |\n"
+                                + "| 4 - REMOVER                                            |\n"
+                                + "| 5 - LISTAR                                             |\n"
+                                + "| 6 - SAIR DO MENU DA TURMA                              |\n"
+                                + "|--------------------------------------------------------|\n");
+
+                        digitoTurma = teclado.nextInt();
+                        teclado.nextLine();
+
+                    }while(digitoTurma != 6);
+
+                        break;
                 case 4:
                     break;
                 case 5:
