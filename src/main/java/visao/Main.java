@@ -1499,7 +1499,6 @@ public class Main {
                     System.out.println("|--------------------------------------------------------|");
 
             }
-                    break;
             }while(digito != 6);
     }
 }
