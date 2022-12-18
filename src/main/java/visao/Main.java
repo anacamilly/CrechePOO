@@ -1539,6 +1539,156 @@ public class Main {
                                 break;
 
                             case 2:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|        ALTERAÇÃO DE CADASTRO DE EXTRACURRICULAR        |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CÓDIGO DA EXTRACURRICULAR QUE DESEJA ALTERAR: |");
+                                System.out.println("|--------------------------------------------------------|");
+                                int idAlterarExtra = teclado.nextInt();
+
+                                var extraCBusca = extraCurricularDao.buscar(idAlterarExtra);
+
+                                if (extraCBusca == null) {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| ATENÇÃO: ESSE ID NÃO FOI ENCONTRADO                    |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                } else {
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("|       INFORMAÇÕES RELACIONADAS AO ID ESCOLHIDO         |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| CÓDIGO:" + extraCBusca.getCod());
+                                    System.out.println("| NOME: " + extraCBusca.getNome());
+                                    System.out.println("| MODALIDADE:" + extraCBusca.getModalidade());
+                                    System.out.println("| CÓDIGO DA TURMA:" + extraCBusca.getCodTurma());
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| O QUE PRECISA SER ALTERADO?                            |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| 1 - CÓDIGO                                             |");
+                                    System.out.println("| 2 - NOME                                               |");
+                                    System.out.println("| 3 - MODALIDADE                                         |");
+                                    System.out.println("| 4 - CÓDIGO DA TURMA                                    |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    System.out.println("| DIGITE A OPÇÃO DESEJADA:                               |");
+                                    System.out.println("|--------------------------------------------------------|");
+                                    var opcE3 = teclado.nextInt();
+
+                                    teclado.nextLine();
+
+                                    switch (opcE3) {
+                                        case 1:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                 ALTERAÇÃO DE CÓDIGO                    |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O CÓDIGO DA EXTRACURRICULAR: " + extraCBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO CÓDIGO DA EXTRACURRICULAR:                         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            int codigoAlteradoE = teclado.nextInt();
+                                            extraCurricular.setCod(codigoAlteradoE);
+
+                                            String nomeext = extraCBusca.getNome();
+                                            extraCurricular.setNome(nomeext);
+
+                                            String modalidadeext = extraCBusca.getModalidade();
+                                            extraCurricular.setModalidade(modalidadeext);
+
+                                            int codturmaext = extraCBusca.getCodTurma();
+                                            extraCurricular.setCodTurma(codturmaext);
+
+                                            extraCurricularDao.alteracao(extraCurricular, idAlterarExtra);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|               CÓDIGO ALTERADO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 2:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                    ALTERAÇÃO DE NOME                   |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O NOME DA EXTRACURRICULAR:" + extraCBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO NOME DA EXTRACURRICULAR:                 |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String nomeAlteradoExt = teclado.nextLine();
+                                            extraCurricular.setNome(nomeAlteradoExt);
+
+                                            int codigoext2 = extraCBusca.getCod();
+                                            extraCurricular.setCod(codigoext2);
+
+                                            String modalidadeext2 = extraCBusca.getModalidade();
+                                            extraCurricular.setModalidade(modalidadeext2);
+
+                                            int codturmaext2 = extraCBusca.getCodTurma();
+                                            extraCurricular.setCodTurma(codturmaext2);
+
+                                            extraCurricular.setCod(idAlterarExtra);
+
+                                            extraCurricularDao.alteracao(extraCurricular, idAlterarExtra);
+
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                NOME ALTERADO COM SUCESSO               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                        case 3:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|                ALTERAÇÃO DE MODALIDADE                 |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO A MODALIDADE DA ESTRACURRICULAR: " + extraCBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE A NOVA MODALIDADE DA ESTRACURRICULAR:           |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            String modalidadeext3 = teclado.nextLine();
+                                            extraCurricular.setModalidade(modalidadeext3);
+
+                                            //int codigoext3 = extraCBusca.getCod();
+                                            //extraCurricular.setCod(codigoext3);
+
+                                            String nomeext3 = extraCBusca.getNome();
+                                            extraCurricular.setNome(nomeext3);
+
+                                            int codturmaext3 = extraCBusca.getCodTurma();
+                                            extraCurricular.setCodTurma(codturmaext3);
+
+                                            extraCurricular.setCod(idAlterarExtra);
+
+                                            extraCurricularDao.alteracao(extraCurricular, idAlterarExtra);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             MODALIDADE ALTERADA COM SUCESSO            |");
+                                            System.out.println("|--------------------------------------------------------|");
+
+                                            break;
+
+                                        case  4:
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|             ALTERAÇÃO DE CÓDIGO DE TURMA               |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| ALTERANDO O CÓDIGO DA TURMA: " + extraCBusca.getNome());
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("| DIGITE O NOVO CÓDIGO DA TURMA:                         |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            int codigoTurmAlteradoE = teclado.nextInt();
+                                            extraCurricular.setCodTurma(codigoTurmAlteradoE);
+
+                                            int codext4 = extraCBusca.getCod();
+                                            extraCurricular.setCod(codext4);
+
+                                            String nomeext4 = extraCBusca.getNome();
+                                            extraCurricular.setNome(nomeext4);
+
+                                            String modalidadeext4 = extraCBusca.getModalidade();
+                                            extraCurricular.setModalidade(modalidadeext4);
+
+                                            extraCurricular.setCod(idAlterarExtra);
+
+                                            extraCurricularDao.alteracao(extraCurricular, idAlterarExtra);
+                                            System.out.println("|--------------------------------------------------------|");
+                                            System.out.println("|               CÓDIGO ALTERADO COM SUCESSO              |");
+                                            System.out.println("|--------------------------------------------------------|");
+                                            break;
+
+                                    }
+                                }
                                 break;
 
                             case 3:
