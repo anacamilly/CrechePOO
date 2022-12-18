@@ -1114,6 +1114,25 @@ public class Main {
                     break;
 
                 case 4:
+                    int digitoRespon;
+                    do {
+                        teclado.nextLine();
+                        System.out.println("\n|--------------------------------------------------------|\n"
+                                + "|                    MENU DE RESPONSÁVEL                 |\n"
+                                + "|--------------------------------------------------------|\n"
+                                + "| 1 - CADASTRAR                                          |\n"
+                                + "| 2 - ALTERAR                                            |\n"
+                                + "| 3 - BUSCAR                                             |\n"
+                                + "| 4 - REMOVER                                            |\n"
+                                + "| 5 - LISTAR                                             |\n"
+                                + "| 6 - SAIR DO MENU DE RESPONSÁVEL                        |\n"
+                                + "|--------------------------------------------------------|\n");
+
+                        digitoRespon = teclado.nextInt();
+                        teclado.nextLine();
+
+                    }while (digitoRespon != 6);
+
                     break;
 
                 case 5:
@@ -1131,7 +1150,6 @@ public class Main {
                     System.out.println("|--------------------------------------------------------|");
 
             }
-
                     break;
             }while(digito != 6);
     }
