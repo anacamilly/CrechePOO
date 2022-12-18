@@ -14,7 +14,7 @@ public class CuidadorDao {
     private final String RELATORIO = "select * from \"cuidador\"";
     private final String BUSCAR = "select * from cuidador where id=?";
     private final String INCLUIR = "insert into cuidador (nome, cpf, sexo, nascimento, salario, telefone) values ( ?, ?, ?, ?, ?, ?)";
-    private final String EXCLUIR = "delete from \"cuidador\" where \"id\"=?";
+    private final String EXCLUIR = "delete from cuidador where id=?";
     private final String ALTERAR = "update cuidador set nome=?, cpf=?, sexo=?, nascimento=?, salario=?, telefone=?  where id=?";
 
 
