@@ -52,7 +52,39 @@ public class Main {
                         digitoAluno = teclado.nextInt();
                         teclado.nextLine();
 
+                        switch(digitoAluno) {
+                            case 1:
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("|                  CADASTRO DA CRIANÇA                   |");
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O NOME DA CRIANÇA:                              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                crian.setNome(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O CPF DA CRIANÇA:                               |");
+                                System.out.println("|--------------------------------------------------------|");
+                                crian.setCpf(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE O SEXO DA CRIANÇA:                              |");
+                                System.out.println("|--------------------------------------------------------|");
+                                crian.setSexo(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE A DATA DE NASCIMENTO DA CRIANÇA:                |");
+                                System.out.println("|--------------------------------------------------------|");
+                                crian.setDataNascimento(teclado.nextLine());
+                                System.out.println("|--------------------------------------------------------|");
+                                System.out.println("| DIGITE A MATRÍCULA DA CRIANÇA:                         |");
+                                System.out.println("|--------------------------------------------------------|");
+                                crian.setMatricula(teclado.nextInt());
+
+                                teclado.nextLine();
+
+                                break;
+                            case 2:
+                                break;
+                        }
                     }while(digitoAluno != 6);
+
 
                     break;
                 case 2:
